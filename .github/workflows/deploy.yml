@@ -30,15 +30,13 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Deploy to one.com via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          local-dir: ./dist/
-          server-dir: ./
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+      - name: Deploy via SFTP
+        env:
+          SFTP_HOST: ${{ secrets.FTP_HOST }}
+          SFTP_USER: ${{ secrets.FTP_USER }}
+          SFTP_PASS: ${{ secrets.FTP_PASS }}
+        run: |
+          sudo apt-get install -y lftp
+          lftp -e "set sftp:auto-confirm yes; mirror --reverse --delete ./dist/ /; quit" \
+            -u "$SFTP_USER,$SFTP_PASS" \
+            sftp://$SFTP_HOST:22
