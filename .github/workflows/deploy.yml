@@ -30,14 +30,12 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Deploy to one.com via SFTP
+      - name: Deploy to one.com via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          protocol: sftp
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          port: 22
           local-dir: ./dist/
           server-dir: ./
           exclude: |
