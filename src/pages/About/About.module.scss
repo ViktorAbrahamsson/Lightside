@@ -1,0 +1,234 @@
+// Page Hero (shared with About)
+.page-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 360px;
+  @include m.flex-center;
+  overflow: hidden;
+  padding-top: v.$header-height;
+
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/LLS_Mountain_Darker.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.0) 0%,
+      rgba(0, 0, 0, 0.0) 50%,
+      rgba(0, 0, 0, 0.92) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: v.$z-raised;
+    text-align: center;
+    padding-inline: v.$space-6;
+  }
+
+  &__title {
+    font-size: clamp(v.$font-size-3xl, 7vw, v.$font-size-4xl);
+    text-transform: uppercase;
+    margin-bottom: v.$space-4;
+  }
+
+  &__sub {
+    font-size: v.$font-size-lg;
+    color: v.$color-text-muted;
+  }
+}
+
+// Story
+.story {
+  @include m.section-padding;
+
+  &__inner {
+    @include m.container;
+    max-width: 760px;
+  }
+
+  &__label {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-primary;
+    margin-bottom: v.$space-3;
+  }
+
+  &__heading {
+    font-size: clamp(v.$font-size-2xl, 4vw, v.$font-size-3xl);
+    margin-bottom: v.$space-8;
+  }
+
+  &__body {
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-4;
+    line-height: 1.8;
+
+    strong {
+      color: v.$color-text;
+      font-weight: v.$font-weight-bold;
+    }
+  }
+}
+
+// Mission
+.mission {
+  @include m.section-padding;
+  background: v.$color-surface;
+
+  &__inner {
+    @include m.container;
+  }
+
+  &__callout {
+    border-left: 3px solid v.$color-primary;
+    padding-left: v.$space-8;
+    margin-bottom: v.$space-16;
+    max-width: 700px;
+  }
+
+  &__label {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-primary;
+    margin-bottom: v.$space-4;
+  }
+
+  &__quote {
+    font-size: clamp(v.$font-size-lg, 2.5vw, v.$font-size-xl);
+    font-weight: v.$font-weight-semibold;
+    font-style: normal;
+    line-height: 1.5;
+    color: v.$color-text;
+  }
+
+  &__values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: v.$space-8;
+
+    @include m.respond-to(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__value {
+    &::before {
+      @include m.accent-line;
+    }
+  }
+
+  &__value-title {
+    font-size: v.$font-size-lg;
+    margin-bottom: v.$space-3;
+  }
+
+  &__value-body {
+    font-size: v.$font-size-sm;
+    color: v.$color-text-muted;
+    line-height: 1.7;
+  }
+}
+
+// Sponsor Spotlight
+.sponsor-spotlight {
+  @include m.section-padding;
+
+  &__inner {
+    @include m.container;
+  }
+
+  &__label {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-primary;
+    margin-bottom: v.$space-3;
+  }
+
+  &__heading {
+    font-size: clamp(v.$font-size-2xl, 4vw, v.$font-size-3xl);
+    margin-bottom: v.$space-10;
+  }
+
+  &__card {
+    background: v.$color-surface;
+    border: 1px solid v.$color-border;
+    border-top: 3px solid v.$color-primary;
+    border-radius: v.$border-radius-md;
+    padding: v.$space-8;
+    max-width: 640px;
+  }
+
+  &__logo {
+    margin-bottom: v.$space-6;
+  }
+
+  &__logo-text {
+    font-size: v.$font-size-2xl;
+    font-weight: v.$font-weight-bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    color: v.$color-text-muted;
+    line-height: 1.8;
+    margin-bottom: v.$space-6;
+  }
+
+  &__link {
+    font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-primary;
+    transition: opacity v.$transition-fast;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+// CTA Section
+.cta-section {
+  @include m.section-padding;
+  background: v.$color-surface;
+  text-align: center;
+
+  &__inner {
+    @include m.container;
+  }
+
+  &__heading {
+    font-size: clamp(v.$font-size-2xl, 4vw, v.$font-size-3xl);
+    margin-bottom: v.$space-4;
+  }
+
+  &__body {
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-8;
+    font-size: v.$font-size-lg;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: v.$space-4;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

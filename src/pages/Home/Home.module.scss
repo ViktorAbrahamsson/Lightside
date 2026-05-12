@@ -1,0 +1,360 @@
+// Hero
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  @include m.flex-center;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/LLS_Mountain_Darker.png');
+    background-size: cover;
+    background-position: center 70%;
+    background-repeat: no-repeat;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(5, 12, 26, 0.15) 0%,
+      rgba(5, 12, 26, 0.0) 30%,
+      rgba(5, 12, 26, 0.0) 55%,
+      rgba(0, 0, 0, 0.7) 80%,
+      rgba(0, 0, 0, 0.97) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: v.$z-raised;
+    text-align: center;
+    padding-inline: v.$space-6;
+    max-width: 800px;
+  }
+
+  &__eyebrow {
+    font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-2;
+  }
+
+  &__title {
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: v.$font-weight-bold;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+    margin-bottom: v.$space-6;
+    color: v.$color-text;
+  }
+
+  &__title-light {
+    color: v.$color-primary;
+  }
+
+  &__sub {
+    font-size: v.$font-size-lg;
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-8;
+    font-weight: v.$font-weight-regular;
+    letter-spacing: 0.05em;
+  }
+
+  &__cta-group {
+    display: flex;
+    gap: v.$space-4;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+}
+
+// About Preview
+.about-preview {
+  @include m.section-padding;
+
+  &__inner {
+    @include m.container;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-12;
+
+    @include m.respond-to(lg) {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  &__label {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-primary;
+    margin-bottom: v.$space-3;
+  }
+
+  &__heading {
+    font-size: clamp(v.$font-size-2xl, 4vw, v.$font-size-3xl);
+    margin-bottom: v.$space-6;
+  }
+
+  &__body {
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-4;
+    max-width: 520px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: v.$space-2;
+    font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: v.$color-primary;
+    margin-top: v.$space-2;
+    transition: gap v.$transition-fast;
+
+    &:hover {
+      gap: v.$space-3;
+    }
+  }
+
+  &__visual {
+    display: none;
+
+    @include m.respond-to(lg) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+
+  &__logo-mark {
+    // opacity: 0.5;
+
+    img {
+      width: 320px;
+      height: auto;
+    }
+  }
+}
+
+// Team Previews
+.team-previews {
+  @include m.section-padding;
+  background: v.$color-surface;
+
+  &__inner {
+    @include m.container;
+  }
+
+  &__label {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-primary;
+    margin-bottom: v.$space-3;
+  }
+
+  &__heading {
+    font-size: clamp(v.$font-size-2xl, 4vw, v.$font-size-3xl);
+    margin-bottom: v.$space-12;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-6;
+
+    @include m.respond-to(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: v.$color-surface-alt;
+    border: 1px solid v.$color-border;
+    border-radius: v.$border-radius-md;
+    overflow: hidden;
+    transition: border-color v.$transition-base, transform v.$transition-base;
+
+    &:hover {
+      border-color: var(--team-accent, v.$color-primary);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__card-accent {
+    height: 3px;
+    background: var(--team-accent, v.$color-primary);
+    flex-shrink: 0;
+  }
+
+  &__card-body {
+    padding: v.$space-8;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__card-game {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-2;
+  }
+
+  &__card-name {
+    font-size: v.$font-size-2xl;
+    font-weight: v.$font-weight-bold;
+    color: var(--team-accent, v.$color-primary);
+    margin-bottom: v.$space-4;
+  }
+
+  &__card-desc {
+    color: v.$color-text-muted;
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  &__card-link {
+    margin-top: v.$space-6;
+    display: inline-flex;
+    align-items: center;
+    gap: v.$space-2;
+    font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--team-accent, v.$color-primary);
+    transition: gap v.$transition-fast;
+
+    &:hover {
+      gap: v.$space-3;
+    }
+  }
+}
+
+// Sponsors
+.sponsors {
+  @include m.section-padding;
+
+  &__inner {
+    @include m.container;
+  }
+
+  &__label {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-primary;
+    margin-bottom: v.$space-3;
+  }
+
+  &__heading {
+    font-size: clamp(v.$font-size-2xl, 4vw, v.$font-size-3xl);
+    margin-bottom: v.$space-12;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$space-6;
+    margin-bottom: v.$space-12;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: v.$space-3;
+    text-decoration: none;
+    transition: opacity v.$transition-fast;
+
+    &--linked {
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &--main {
+      .sponsors__logo-placeholder {
+        border-color: v.$color-primary;
+      }
+
+      .sponsors__tier-badge {
+        background: rgba(v.$color-primary, 0.12);
+        color: v.$color-primary;
+        border-color: rgba(v.$color-primary, 0.3);
+      }
+    }
+  }
+
+  &__logo {
+    max-height: 64px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  &__logo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: v.$space-6 v.$space-12;
+    border: 1px solid v.$color-border;
+    border-radius: v.$border-radius-md;
+    min-width: 200px;
+  }
+
+  &__name {
+    font-size: v.$font-size-xl;
+    font-weight: v.$font-weight-bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &__tier-badge {
+    display: inline-block;
+    padding: v.$space-1 v.$space-3;
+    border: 1px solid v.$color-border;
+    border-radius: v.$border-radius-sm;
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: v.$color-text-muted;
+  }
+
+  &__cta-text {
+    font-size: v.$font-size-sm;
+    color: v.$color-text-muted;
+  }
+
+  &__cta-link {
+    color: v.$color-primary;
+    font-weight: v.$font-weight-semibold;
+    transition: opacity v.$transition-fast;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

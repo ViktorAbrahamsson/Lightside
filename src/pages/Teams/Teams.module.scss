@@ -1,0 +1,150 @@
+.teams {
+  padding-top: 0;
+}
+
+// Page Hero (shared pattern)
+.page-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 360px;
+  @include m.flex-center;
+  overflow: hidden;
+  padding-top: v.$header-height;
+
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/LLS_Mountain_Darker.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.0) 0%,
+      rgba(0, 0, 0, 0.0) 50%,
+      rgba(0, 0, 0, 0.92) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: v.$z-raised;
+    text-align: center;
+    padding-inline: v.$space-6;
+  }
+
+  &__title {
+    font-size: clamp(v.$font-size-3xl, 7vw, v.$font-size-4xl);
+    text-transform: uppercase;
+    margin-bottom: v.$space-4;
+  }
+
+  &__sub {
+    font-size: v.$font-size-lg;
+    color: v.$color-text-muted;
+  }
+}
+
+// Team Roster
+.team-roster {
+  @include m.section-padding;
+
+  &--alt {
+    background: v.$color-surface;
+  }
+
+  &__inner {
+    @include m.container;
+  }
+
+  &__header {
+    max-width: 640px;
+    margin-bottom: v.$space-12;
+  }
+
+  &__game {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-2;
+  }
+
+  &__name {
+    font-size: clamp(v.$font-size-3xl, 6vw, 5rem);
+    font-weight: v.$font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: v.$space-4;
+  }
+
+  &__desc {
+    color: v.$color-text-muted;
+    line-height: 1.7;
+    margin-bottom: v.$space-8;
+  }
+
+  &__divider {
+    height: 2px;
+    width: 64px;
+    background: var(--roster-accent, v.$color-primary);
+  }
+
+  &__players {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: v.$space-3;
+    margin-bottom: v.$space-10;
+
+    @include m.respond-to(sm) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include m.respond-to(md) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include m.respond-to(lg) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__staff-section {
+    margin-top: v.$space-4;
+  }
+
+  &__staff-label {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-4;
+    // Reset h3 defaults
+    line-height: inherit;
+    letter-spacing: 0.2em;
+  }
+
+  &__staff-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-3;
+
+    @include m.respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.respond-to(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

@@ -1,0 +1,201 @@
+.contact {
+  padding-top: 0;
+}
+
+.page-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 360px;
+  @include m.flex-center;
+  overflow: hidden;
+  padding-top: v.$header-height;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/LLS_Mountain_Darker.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.0) 0%,
+      rgba(0, 0, 0, 0.0) 50%,
+      rgba(0, 0, 0, 0.92) 100%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: v.$z-raised;
+    text-align: center;
+    padding-inline: v.$space-6;
+  }
+
+  &__title {
+    font-size: clamp(v.$font-size-3xl, 7vw, v.$font-size-4xl);
+    text-transform: uppercase;
+    margin-bottom: v.$space-4;
+  }
+
+  &__sub {
+    font-size: v.$font-size-lg;
+    color: v.$color-text-muted;
+  }
+}
+
+// Partner section — primary CTA
+.partner {
+  @include m.section-padding;
+
+  &__inner {
+    @include m.container;
+  }
+
+  &__header {
+    max-width: 680px;
+    margin-bottom: v.$space-16;
+  }
+
+  &__label {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-primary;
+    margin-bottom: v.$space-3;
+  }
+
+  &__heading {
+    font-size: clamp(v.$font-size-2xl, 4vw, v.$font-size-3xl);
+    margin-bottom: v.$space-6;
+  }
+
+  &__sub {
+    color: v.$color-text-muted;
+    line-height: 1.8;
+    margin-bottom: v.$space-8;
+    font-size: v.$font-size-lg;
+  }
+
+  &__cta {
+    margin-bottom: v.$space-4;
+  }
+
+  &__email-hint {
+    font-size: v.$font-size-sm;
+    color: v.$color-text-muted;
+
+    a {
+      color: v.$color-primary;
+      transition: opacity v.$transition-fast;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__perks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-6;
+
+    @include m.respond-to(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__perk {
+    border-top: 2px solid v.$color-primary;
+    padding-top: v.$space-6;
+  }
+
+  &__perk-title {
+    font-size: v.$font-size-base;
+    font-weight: v.$font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: v.$space-3;
+  }
+
+  &__perk-body {
+    font-size: v.$font-size-sm;
+    color: v.$color-text-muted;
+    line-height: 1.7;
+  }
+}
+
+// Community section — secondary
+.community {
+  @include m.section-padding;
+  background: v.$color-surface;
+
+  &__inner {
+    @include m.container;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$space-12;
+
+    @include m.respond-to(md) {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: v.$space-4;
+  }
+
+  &__label {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-primary;
+  }
+
+  &__heading {
+    font-size: clamp(v.$font-size-xl, 3vw, v.$font-size-2xl);
+    margin: 0;
+  }
+
+  &__body {
+    color: v.$color-text-muted;
+    line-height: 1.7;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-8;
+  }
+
+  &__meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-3;
+  }
+
+  &__meta-label {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-primary;
+  }
+
+  &__meta-value {
+    font-size: v.$font-size-base;
+    color: v.$color-text-muted;
+  }
+}

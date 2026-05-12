@@ -1,0 +1,114 @@
+import { Button } from '@/components/common/Button/Button';
+import { PageSeo } from '@/components/common/PageSeo/PageSeo';
+import { SocialIcons } from '@/components/common/SocialIcons/SocialIcons';
+import { contactInfo } from '@/data/contact';
+import styles from './Contact.module.scss';
+
+const PARTNER_PERKS = [
+  {
+    title: 'Brand Visibility',
+    body: 'Your brand featured across our jerseys, social media, and all competition coverage reaching Swedish and Nordic audiences.',
+  },
+  {
+    title: 'Engaged Audience',
+    body: 'Direct access to a young, brand-loyal gaming community that follows our teams across platforms.',
+  },
+  {
+    title: 'Growing Presence',
+    body: 'We are actively expanding our competitive footprint — get in early as we scale across multiple titles and events.',
+  },
+];
+
+export function Contact() {
+  return (
+    <>
+      <PageSeo
+        title="Work With Us"
+        description="Partner with Lundqvist Lightside. Sponsorship opportunities for brands looking to reach a young, engaged Swedish esports audience."
+        path="/contact"
+      />
+      <main>
+        <section className={styles['page-hero']} aria-label="Contact hero">
+          <div className={styles['page-hero__bg']} aria-hidden="true" />
+          <div className={styles['page-hero__overlay']} aria-hidden="true" />
+          <div className={styles['page-hero__content']}>
+            <h1 className={styles['page-hero__title']}>Work With Us</h1>
+            <p className={styles['page-hero__sub']}>
+              Partner with a growing Swedish esports organization.
+            </p>
+          </div>
+        </section>
+
+        <section className={styles['partner']} aria-labelledby="partner-heading">
+          <div className={styles['partner__inner']}>
+            <div className={styles['partner__header']}>
+              <p className={styles['partner__label']} aria-hidden="true">Sponsorships & Partnerships</p>
+              <h2 id="partner-heading" className={styles['partner__heading']}>
+                Put your brand at the center of Swedish esports.
+              </h2>
+              <p className={styles['partner__sub']}>
+                Lundqvist Lightside is building one of Sweden's most recognizable competitive esports
+                brands. We are looking for partners who share our ambition and want to grow alongside us.
+                Whether you're a local business or an established brand — there's a place for you here.
+              </p>
+              <Button
+                as="a"
+                href={`mailto:${contactInfo.email}?subject=Partnership Inquiry`}
+                variant="primary"
+                size="lg"
+                className={styles['partner__cta']}
+              >
+                Get in touch
+              </Button>
+              <p className={styles['partner__email-hint']}>
+                or email us directly at{' '}
+                <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+              </p>
+            </div>
+
+            <div className={styles['partner__perks']} role="list" aria-label="Partnership benefits">
+              {PARTNER_PERKS.map(({ title, body }) => (
+                <div key={title} className={styles['partner__perk']} role="listitem">
+                  <h3 className={styles['partner__perk-title']}>{title}</h3>
+                  <p className={styles['partner__perk-body']}>{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles['community']} aria-labelledby="community-heading">
+          <div className={styles['community__inner']}>
+            <div className={styles['community__block']}>
+              <p className={styles['community__label']} aria-hidden="true">Community</p>
+              <h2 id="community-heading" className={styles['community__heading']}>Join the conversation</h2>
+              <p className={styles['community__body']}>
+                Follow our journey, watch our matches, and connect with players and fans on Discord.
+              </p>
+              <Button
+                as="a"
+                href={contactInfo.discordUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+              >
+                Join our Discord
+              </Button>
+            </div>
+
+            <div className={styles['community__meta']}>
+              <div className={styles['community__meta-item']}>
+                <p id="follow-label" className={styles['community__meta-label']}>Follow us</p>
+                <SocialIcons links={contactInfo.socials} size="md" />
+              </div>
+              <div className={styles['community__meta-item']}>
+                <p className={styles['community__meta-label']}>Location</p>
+                <p className={styles['community__meta-value']}>{contactInfo.location}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}

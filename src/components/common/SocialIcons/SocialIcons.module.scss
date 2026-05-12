@@ -1,0 +1,43 @@
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: v.$space-3;
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: v.$color-text-muted;
+    transition: color v.$transition-fast;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: v.$color-primary;
+    }
+  }
+
+  &--sm {
+    gap: v.$space-2;
+
+    .social-icons__link {
+      width: 28px;
+      height: 28px;
+
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}

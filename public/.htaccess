@@ -1,0 +1,14 @@
+# Block directories and PHP files on one.com static runtime
+<If " %{ENV:G1_RUNTIME} == 'static' ">
+    <If " -d %{REQUEST_FILENAME} || %{REQUEST_FILENAME} =~ /.*\.php$/ ">
+        Require all denied
+    </If>
+</If>
+
+# SPA fallback — serve index.html for any path that isn't a real file
+Options -MultiViews
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [QSA,L]
+</IfModule>
