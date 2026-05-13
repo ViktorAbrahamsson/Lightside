@@ -45,9 +45,9 @@ export function Footer() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" className={styles['footer__col-link']}>
+              <Link to="/#sponsors" className={styles['footer__col-link']}>
                 Sponsors
-              </NavLink>
+              </Link>
             </li>
             <li>
               <a

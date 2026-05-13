@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/common/Button/Button';
 import { PageSeo } from '@/components/common/PageSeo/PageSeo';
 import { Reveal } from '@/components/common/Reveal/Reveal';
@@ -9,6 +9,15 @@ import styles from './Home.module.scss';
 
 export function Home() {
   const bgRef = useRef<HTMLDivElement>(null);
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const el = document.getElementById(hash.slice(1));
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }, [hash]);
 
   useEffect(() => {
     const bg = bgRef.current;
@@ -133,7 +142,7 @@ export function Home() {
         </div></Reveal>
       </section>
 
-      <section className={styles['sponsors']} aria-labelledby="sponsors-heading">
+      <section id="sponsors" className={styles['sponsors']} aria-labelledby="sponsors-heading">
         <Reveal><div className={styles['sponsors__inner']}>
           <p className={styles['sponsors__label']} aria-hidden="true">Partners</p>
           <h2 id="sponsors-heading" className={styles['sponsors__heading']}>Our Sponsors</h2>

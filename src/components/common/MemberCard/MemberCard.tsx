@@ -77,10 +77,10 @@ function RoleIcon({ role }: { role: LoLRole }) {
   );
 }
 
-function Silhouette() {
+function Silhouette({ logoSrc }: { logoSrc: string }) {
   return (
     <div className={styles['member-card__silhouette']} aria-hidden="true">
-      <img src="/logo-white.png" alt="" />
+      <img src={logoSrc} alt="" />
     </div>
   );
 }
@@ -88,9 +88,10 @@ function Silhouette() {
 interface MemberCardProps {
   member: TeamMember;
   accentColor: string;
+  logoSrc: string;
 }
 
-export function MemberCard({ member, accentColor }: MemberCardProps) {
+export function MemberCard({ member, accentColor, logoSrc }: MemberCardProps) {
   const hasSocials = member.socials.length > 0;
 
   return (
@@ -108,7 +109,7 @@ export function MemberCard({ member, accentColor }: MemberCardProps) {
             loading="lazy"
           />
         ) : (
-          <Silhouette />
+          <Silhouette logoSrc={logoSrc} />
         )}
 
         <span
@@ -157,9 +158,10 @@ export function MemberCard({ member, accentColor }: MemberCardProps) {
 interface StaffCardProps {
   member: TeamMember;
   accentColor: string;
+  logoSrc: string;
 }
 
-export function StaffCard({ member, accentColor }: StaffCardProps) {
+export function StaffCard({ member, accentColor, logoSrc }: StaffCardProps) {
   const firstSocial = member.socials[0];
   const className = `${styles['staff-card']} ${firstSocial ? styles['staff-card--linked'] : ''}`;
   const style = { '--accent': accentColor } as React.CSSProperties;
@@ -175,7 +177,7 @@ export function StaffCard({ member, accentColor }: StaffCardProps) {
             loading="lazy"
           />
         ) : (
-          <Silhouette />
+          <Silhouette logoSrc={logoSrc} />
         )}
       </div>
       <div className={styles['staff-card__body']}>

@@ -48,6 +48,9 @@ export function Teams() {
           const players = sortByRole(team.members.filter((m) => !m.isStaff));
           const staff = sortByRole(team.members.filter((m) => m.isStaff));
           const headingId = `team-heading-${team.id}`;
+          const logoSrc = team.id === 'lightside'
+            ? '/lightside-logo--blue-gradient.png'
+            : '/lightside-logo--red-gradient.png';
 
           return (
             <section
@@ -84,7 +87,7 @@ export function Teams() {
                     {players.map((member, i) => (
                       <Reveal key={member.id} delay={i * 100}>
                         <div role="listitem">
-                          <MemberCard member={member} accentColor={team.accentColor} />
+                          <MemberCard member={member} accentColor={team.accentColor} logoSrc={logoSrc} />
                         </div>
                       </Reveal>
                     ))}
@@ -102,7 +105,7 @@ export function Teams() {
                       {staff.map((member, i) => (
                         <Reveal key={member.id} delay={i * 100}>
                           <div role="listitem">
-                            <StaffCard member={member} accentColor={team.accentColor} />
+                            <StaffCard member={member} accentColor={team.accentColor} logoSrc={logoSrc} />
                           </div>
                         </Reveal>
                       ))}

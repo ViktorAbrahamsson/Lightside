@@ -19,7 +19,7 @@ export const sponsors: Sponsor[] = [
     id: 'sef',
     name: 'Svenska esportsförbundet',
     tier: 'member',
-    websiteUrl: 'https://esportsforbundet.se',
+    websiteUrl: 'https://www.svenskesport.se/',
     description: "Sweden's official esports federation",
   },
 ];
