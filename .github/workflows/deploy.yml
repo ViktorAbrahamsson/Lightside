@@ -31,12 +31,11 @@ jobs:
         run: pnpm build
 
       - name: Deploy via FTP
-        env:
-          FTP_HOST: ${{ secrets.FTP_HOST }}
-          FTP_USER: ${{ secrets.FTP_USER }}
-          FTP_PASS: ${{ secrets.FTP_PASS }}
-        run: |
-          sudo apt-get install -y lftp
-          lftp -e "set ftp:ssl-allow no; mirror --reverse --delete ./dist/ /customers/b/6/1/cissthqij/webroots/www; quit" \
-            -u "$FTP_USER,$FTP_PASS" \
-            ftp://$FTP_HOST
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: ./dist/
+          server-dir: /customers/b/6/1/cissthqij/webroots/www/
+          protocol: ftp
