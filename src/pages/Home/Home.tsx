@@ -39,8 +39,8 @@ export function Home() {
           </h1>
           <p className={styles['hero__sub']}>Competing from the shadows.</p>
           <div className={styles['hero__cta-group']}>
-            <Button as="a" href="/teams" variant="primary" size="lg">
-              Our Teams
+            <Button as="a" href="/contact" variant="primary" size="lg">
+              Contact
             </Button>
             <Button as="a" href="/about" variant="ghost" size="lg">
               About Us
