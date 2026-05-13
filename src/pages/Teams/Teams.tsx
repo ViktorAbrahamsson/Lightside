@@ -4,7 +4,7 @@ import { PageSeo } from '@/components/common/PageSeo/PageSeo';
 import type { LoLRole } from '@/types';
 import styles from './Teams.module.scss';
 
-const ROLE_ORDER: LoLRole[] = ['top', 'jungle', 'mid', 'bot', 'support', 'coach', 'manager', 'analyst'];
+const ROLE_ORDER: LoLRole[] = ['top', 'jungle', 'mid', 'bot', 'support', 'coach', 'co-coach', 'assistant-coach', 'manager', 'analyst'];
 
 function sortByRole<T extends { role: LoLRole }>(members: T[]) {
   return [...members].sort((a, b) => ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role));
@@ -56,17 +56,23 @@ export function Teams() {
                   <div className={styles['team-roster__divider']} aria-hidden="true" />
                 </header>
 
-                <div
-                  className={styles['team-roster__players']}
-                  role="list"
-                  aria-label={`${team.name} players`}
-                >
-                  {players.map((member) => (
-                    <div key={member.id} role="listitem">
-                      <MemberCard member={member} accentColor={team.accentColor} />
-                    </div>
-                  ))}
-                </div>
+                {team.playersComingSoon ? (
+                  <div className={styles['team-roster__coming-soon']}>
+                    <p className={styles['team-roster__coming-soon-text']}>Roster coming soon</p>
+                  </div>
+                ) : (
+                  <div
+                    className={styles['team-roster__players']}
+                    role="list"
+                    aria-label={`${team.name} players`}
+                  >
+                    {players.map((member) => (
+                      <div key={member.id} role="listitem">
+                        <MemberCard member={member} accentColor={team.accentColor} />
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 {staff.length > 0 && (
                   <div className={styles['team-roster__staff-section']}>

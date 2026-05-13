@@ -1,5 +1,4 @@
 import type { TeamMember, LoLRole, SocialPlatform } from '@/types';
-import { SocialIcons } from '@/components/common/SocialIcons/SocialIcons';
 import styles from './MemberCard.module.scss';
 
 const ROLE_LABELS: Record<LoLRole, string> = {
@@ -9,6 +8,8 @@ const ROLE_LABELS: Record<LoLRole, string> = {
   bot: 'Bot Laner',
   support: 'Support',
   coach: 'Head Coach',
+  'co-coach': 'Co Head Coach',
+  'assistant-coach': 'Assistant Coach',
   manager: 'Manager',
   analyst: 'Analyst',
 };
@@ -58,9 +59,11 @@ const ROLE_ICONS: Record<LoLRole, string> = {
   mid:     '/Role=Mid.png',
   bot:     '/Role=Bot.png',
   support: '/Role=Support.png',
-  coach:   '/shield-white.png',
-  manager: '/shield-white.png',
-  analyst: '/shield-white.png',
+  coach:             '/shield-white.png',
+  'co-coach':        '/shield-white.png',
+  'assistant-coach': '/shield-white.png',
+  manager:          '/shield-white.png',
+  analyst:          '/shield-white.png',
 };
 
 function RoleIcon({ role }: { role: LoLRole }) {
@@ -144,7 +147,7 @@ export function MemberCard({ member, accentColor }: MemberCardProps) {
             {ROLE_LABELS[member.role]}
           </span>
           <p className={styles['member-card__ign']}>{member.ign}</p>
-          <p className={styles['member-card__name']}>{member.name}</p>
+          {member.name && <p className={styles['member-card__name']}>{member.name}</p>}
         </div>
       </div>
     </article>
@@ -157,12 +160,12 @@ interface StaffCardProps {
 }
 
 export function StaffCard({ member, accentColor }: StaffCardProps) {
-  const hasSocials = member.socials.length > 0;
-  return (
-    <article
-      className={`${styles['staff-card']} ${hasSocials ? styles['staff-card--linked'] : ''}`}
-      style={{ '--accent': accentColor } as React.CSSProperties}
-    >
+  const firstSocial = member.socials[0];
+  const className = `${styles['staff-card']} ${firstSocial ? styles['staff-card--linked'] : ''}`;
+  const style = { '--accent': accentColor } as React.CSSProperties;
+
+  const inner = (
+    <>
       <div className={styles['staff-card__thumb']}>
         {member.imageUrl ? (
           <img
@@ -175,20 +178,39 @@ export function StaffCard({ member, accentColor }: StaffCardProps) {
           <Silhouette />
         )}
       </div>
-
       <div className={styles['staff-card__body']}>
         <span className={styles['staff-card__role-label']}>
           {ROLE_LABELS[member.role]}
         </span>
         <p className={styles['staff-card__ign']}>{member.ign}</p>
-        <p className={styles['staff-card__name']}>{member.name}</p>
+        {member.name && <p className={styles['staff-card__name']}>{member.name}</p>}
       </div>
-
-      {member.socials.length > 0 && (
-        <div className={styles['staff-card__social']}>
-          <SocialIcons links={member.socials} size="sm" />
+      {firstSocial && (
+        <div className={styles['staff-card__social-hint']} aria-hidden="true">
+          <SocialOverlayIcon platform={firstSocial.platform} />
         </div>
       )}
+    </>
+  );
+
+  if (firstSocial) {
+    return (
+      <a
+        className={className}
+        style={style}
+        href={firstSocial.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${member.ign} on ${firstSocial.platform}`}
+      >
+        {inner}
+      </a>
+    );
+  }
+
+  return (
+    <article className={className} style={style}>
+      {inner}
     </article>
   );
 }

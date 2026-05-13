@@ -187,8 +187,30 @@
   border-radius: v.$border-radius-sm;
   transition: border-color v.$transition-base;
 
-  &--linked:has(.staff-card__social:hover) {
+  &--linked:hover,
+  &--linked:focus {
     border-color: var(--accent, v.$color-primary);
+    outline: none;
+  }
+
+  &--linked:hover &__social-hint,
+  &--linked:focus &__social-hint {
+    opacity: 1;
+    color: var(--accent, v.$color-primary);
+  }
+
+  &__social-hint {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    color: v.$color-text-muted;
+    transition: opacity v.$transition-base, color v.$transition-base;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
   }
 
   &__thumb {
@@ -250,7 +272,4 @@
     margin-top: 2px;
   }
 
-  &__social {
-    flex-shrink: 0;
-  }
 }

@@ -19,6 +19,8 @@ export type LoLRole =
   | 'bot'
   | 'support'
   | 'coach'
+  | 'co-coach'
+  | 'assistant-coach'
   | 'manager'
   | 'analyst';
 
@@ -38,6 +40,7 @@ export interface Team {
   game: string;
   description: string;
   accentColor: string;
+  playersComingSoon?: boolean;
   members: TeamMember[];
 }
 

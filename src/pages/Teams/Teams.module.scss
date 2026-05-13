@@ -118,6 +118,24 @@
     }
   }
 
+  &__coming-soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    border: 1px dashed v.$color-border;
+    border-radius: v.$border-radius-sm;
+    margin-bottom: v.$space-10;
+  }
+
+  &__coming-soon-text {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: v.$color-text-muted;
+  }
+
   &__staff-section {
     margin-top: v.$space-4;
   }
@@ -141,10 +159,6 @@
 
     @include m.respond-to(md) {
       grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include m.respond-to(lg) {
-      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
