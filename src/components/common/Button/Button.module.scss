@@ -32,6 +32,19 @@
     }
   }
 
+  &--discord {
+    background: #5865F2;
+    color: #ffffff;
+    border-color: #5865F2;
+
+    &:hover,
+    &:focus-visible {
+      background: color.adjust(#5865F2, $lightness: 8%);
+      border-color: color.adjust(#5865F2, $lightness: 8%);
+      box-shadow: 0 0 20px rgba(#5865F2, 0.35), 0 0 40px rgba(#5865F2, 0.18);
+    }
+  }
+
   &--ghost {
     background: transparent;
     color: v.$color-text;

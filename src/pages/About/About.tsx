@@ -128,7 +128,7 @@ export function About() {
               href={contactInfo.discordUrl}
               target="_blank"
               rel="noopener noreferrer"
-              variant="primary"
+              variant="discord"
               size="lg"
             >
               Join Discord

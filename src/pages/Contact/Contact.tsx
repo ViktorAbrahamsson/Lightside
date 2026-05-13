@@ -1,7 +1,7 @@
 import { Button } from '@/components/common/Button/Button';
 import { PageSeo } from '@/components/common/PageSeo/PageSeo';
 import { Reveal } from '@/components/common/Reveal/Reveal';
-import { SocialIcons } from '@/components/common/SocialIcons/SocialIcons';
+import { CommunityChannels } from '@/components/common/CommunityChannels/CommunityChannels';
 import { contactInfo } from '@/data/contact';
 import styles from './Contact.module.scss';
 
@@ -80,35 +80,9 @@ export function Contact() {
           </div>
         </section>
 
-        <section className={styles['community']} aria-labelledby="community-heading">
+        <section className={styles['community']} aria-label="Community channels">
           <Reveal><div className={styles['community__inner']}>
-            <div className={styles['community__block']}>
-              <p className={styles['community__label']} aria-hidden="true">Community</p>
-              <h2 id="community-heading" className={styles['community__heading']}>Join the conversation</h2>
-              <p className={styles['community__body']}>
-                Follow our journey, watch our matches, and connect with players and fans on Discord.
-              </p>
-              <Button
-                as="a"
-                href={contactInfo.discordUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="primary"
-              >
-                Join our Discord
-              </Button>
-            </div>
-
-            <div className={styles['community__meta']}>
-              <div className={styles['community__meta-item']}>
-                <p id="follow-label" className={styles['community__meta-label']}>Follow us</p>
-                <SocialIcons links={contactInfo.socials} size="md" />
-              </div>
-              <div className={styles['community__meta-item']}>
-                <p className={styles['community__meta-label']}>Location</p>
-                <p className={styles['community__meta-value']}>{contactInfo.location}</p>
-              </div>
-            </div>
+            <CommunityChannels />
           </div></Reveal>
         </section>
       </main>

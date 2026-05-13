@@ -143,12 +143,12 @@ export function Home() {
             const hasUrl = Boolean(sponsor.websiteUrl && sponsor.websiteUrl !== '#');
             const inner = (
               <>
-                <span className={styles['sponsors__main-badge']}>Main Sponsor</span>
                 {sponsor.logoUrl ? (
                   <img className={styles['sponsors__main-logo']} src={sponsor.logoUrl} alt={sponsor.name} />
                 ) : (
                   <p className={styles['sponsors__main-name']}>{sponsor.name}</p>
                 )}
+                <span className={styles['sponsors__main-badge']}>Main Sponsor</span>
               </>
             );
             return hasUrl ? (

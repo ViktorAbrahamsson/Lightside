@@ -66,7 +66,7 @@ export function Header() {
             href={contactInfo.discordUrl}
             target="_blank"
             rel="noopener noreferrer"
-            variant="primary"
+            variant="discord"
             size="sm"
             className={styles['header__discord-cta']}
           >
@@ -119,7 +119,7 @@ export function Header() {
               href={contactInfo.discordUrl}
               target="_blank"
               rel="noopener noreferrer"
-              variant="primary"
+              variant="discord"
               onClick={closeMenu}
             >
               Join Discord

@@ -1,0 +1,73 @@
+.not-found {
+  position: relative;
+  min-height: 100svh;
+  @include m.flex-center;
+  overflow: hidden;
+  padding-top: v.$header-height;
+  padding-inline: v.$space-6;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/LLS_Mountain_Darker.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  }
+
+  &__content {
+    position: relative;
+    z-index: v.$z-raised;
+    text-align: center;
+    max-width: 560px;
+  }
+
+  &__code {
+    font-size: clamp(6rem, 20vw, 12rem);
+    font-weight: v.$font-weight-bold;
+    line-height: 1;
+    color: v.$color-primary;
+    opacity: 0.2;
+    letter-spacing: -0.05em;
+    margin-bottom: v.$space-4;
+    user-select: none;
+  }
+
+  &__heading {
+    font-size: clamp(v.$font-size-2xl, 5vw, v.$font-size-3xl);
+    font-weight: v.$font-weight-bold;
+    text-transform: uppercase;
+    margin-bottom: v.$space-4;
+  }
+
+  &__sub {
+    font-size: v.$font-size-base;
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-8;
+    line-height: 1.6;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: v.$space-2;
+    font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: v.$color-primary;
+    transition: gap v.$transition-fast;
+    text-decoration: none;
+
+    &:hover {
+      gap: v.$space-3;
+    }
+  }
+}

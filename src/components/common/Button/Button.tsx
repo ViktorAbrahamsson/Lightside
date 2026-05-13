@@ -1,7 +1,7 @@
 import { type AnchorHTMLAttributes, type ButtonHTMLAttributes } from 'react';
 import styles from './Button.module.scss';
 
-type ButtonVariant = 'primary' | 'ghost';
+type ButtonVariant = 'primary' | 'ghost' | 'discord';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 type ButtonAsButton = ButtonHTMLAttributes<HTMLButtonElement> & {
