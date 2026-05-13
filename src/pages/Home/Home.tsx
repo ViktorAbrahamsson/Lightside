@@ -120,7 +120,7 @@ export function Home() {
                   <h3 className={styles['team-previews__card-name']}>{team.name}</h3>
                   <p className={styles['team-previews__card-desc']}>{team.description}</p>
                   <Link
-                    to="/teams"
+                    to={`/teams#${team.id}`}
                     className={styles['team-previews__card-link']}
                     aria-label={`View ${team.name} roster`}
                   >

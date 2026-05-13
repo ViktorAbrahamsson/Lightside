@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { teams } from '@/data/teams';
 import { MemberCard, StaffCard } from '@/components/common/MemberCard/MemberCard';
 import { PageSeo } from '@/components/common/PageSeo/PageSeo';
@@ -12,6 +14,17 @@ function sortByRole<T extends { role: LoLRole }>(members: T[]) {
 }
 
 export function Teams() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const id = hash.slice(1);
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }, [hash]);
+
   return (
     <>
       <PageSeo
@@ -39,6 +52,7 @@ export function Teams() {
           return (
             <section
               key={team.id}
+              id={team.id}
               className={`${styles['team-roster']} ${index % 2 !== 0 ? styles['team-roster--alt'] : ''}`}
               style={{ '--roster-accent': team.accentColor } as React.CSSProperties}
               aria-labelledby={headingId}
