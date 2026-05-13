@@ -30,13 +30,13 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Deploy via SFTP
+      - name: Deploy via FTP
         env:
-          SFTP_HOST: ${{ secrets.FTP_HOST }}
-          SFTP_USER: ${{ secrets.FTP_USER }}
-          SFTP_PASS: ${{ secrets.FTP_PASS }}
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
         run: |
           sudo apt-get install -y lftp
-          lftp -e "set sftp:auto-confirm yes; mirror --reverse --delete ./dist/ /; quit" \
-            -u "$SFTP_USER,$SFTP_PASS" \
-            sftp://$SFTP_HOST:22
+          lftp -e "set ftp:ssl-allow no; mirror --reverse --delete ./dist/ /customers/b/6/1/cissthqij/webroots/www; quit" \
+            -u "$FTP_USER,$FTP_PASS" \
+            ftp://$FTP_HOST
