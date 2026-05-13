@@ -35,7 +35,6 @@ export function Community() {
           <div className={styles['page-hero__bg']} aria-hidden="true" />
           <div className={styles['page-hero__overlay']} aria-hidden="true" />
           <div className={styles['page-hero__content']}>
-            <p className={styles['page-hero__eyebrow']} aria-hidden="true">Connect</p>
             <h1 className={styles['page-hero__title']}>Join the Community</h1>
             <p className={styles['page-hero__sub']}>Follow, connect, and be part of the journey.</p>
           </div>
@@ -109,6 +108,9 @@ export function Community() {
             </div>
           </div>
         </section>
+
+        
+
       </main>
     </>
   );
