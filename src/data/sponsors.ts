@@ -11,10 +11,15 @@ export const sponsors: Sponsor[] = [
   },
   {
     id: 'manategg',
-    name: 'Manate.gg',
-    tier: 'sponsor',
+    name: 'Manatee.GG',
+    tier: 'partner',
     websiteUrl: 'https://www.manatee.gg/collections/lundqvist-lightside',
-    description:
-      'Manategg has been a vital partner in our journey, providing the support and resources needed to excel in competitive esports. Their commitment to our success is unmatched, and we are honored to have them as a main sponsor.',
+  },
+  {
+    id: 'sef',
+    name: 'Svenska esportsförbundet',
+    tier: 'member',
+    websiteUrl: 'https://esportsforbundet.se',
+    description: "Sweden's official esports federation",
   },
 ];

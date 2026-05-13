@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useScrolled } from '@/hooks/useScrolled';
 import { Button } from '@/components/common/Button/Button';
-import { contactInfo, headerSocials } from '@/data/contact';
-import { SocialIcons } from '@/components/common/SocialIcons/SocialIcons';
+import { contactInfo } from '@/data/contact';
 import styles from './Header.module.scss';
 
 const NAV_LINKS = [
   { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
   { to: '/teams', label: 'Teams' },
+  { to: '/community', label: 'Community' },
+  { to: '/contact', label: 'Contact' },
 ];
 
 export function Header() {
@@ -47,7 +47,6 @@ export function Header() {
         </nav>
 
         <div className={styles['header__actions']}>
-          <SocialIcons links={headerSocials} size="sm" />
           <Button
             as="a"
             href={contactInfo.discordUrl}
@@ -92,9 +91,6 @@ export function Header() {
               ))}
             </ul>
           </nav>
-          <div className={styles['header__mobile-social']}>
-            <SocialIcons links={headerSocials} size="sm" />
-          </div>
           <Button
             as="a"
             href={contactInfo.discordUrl}

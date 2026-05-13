@@ -272,44 +272,94 @@
     margin-bottom: v.$space-12;
   }
 
-  &__grid {
+  // Main sponsor — sits alone on its row at natural card width
+  &__main-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: v.$space-10;
+  }
+
+  &__main-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    gap: v.$space-4;
+    padding: v.$space-10 v.$space-8;
+    border: 1px solid v.$color-border;
+    border-radius: v.$border-radius-md;
+    text-decoration: none;
+    transition: border-color v.$transition-fast;
+
+    &--linked:hover {
+      border-color: v.$color-primary;
+    }
+  }
+
+  &__main-badge {
+    display: inline-block;
+    padding: v.$space-1 v.$space-3;
+    background: rgba(v.$color-primary, 0.1);
+    color: v.$color-primary;
+    border: 1px solid rgba(v.$color-primary, 0.25);
+    border-radius: v.$border-radius-sm;
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  &__main-logo {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  &__main-name {
+    font-size: v.$font-size-2xl;
+    font-weight: v.$font-weight-bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  // Sub-section divider (Partners, Memberships)
+  &__sub-section {
+    margin-top: v.$space-10;
+  }
+
+  &__sub-label {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: v.$color-text-muted;
+    padding-bottom: v.$space-3;
+    margin-bottom: v.$space-6;
+    border-bottom: 1px solid v.$color-border;
+  }
+
+  // Partners row
+  &__partners-row {
     display: flex;
     flex-wrap: wrap;
     gap: v.$space-6;
-    margin-bottom: v.$space-12;
+    align-items: center;
   }
 
   &__item {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: v.$space-3;
+    align-items: center;
     text-decoration: none;
     transition: opacity v.$transition-fast;
 
-    &--linked {
-      cursor: pointer;
-
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-
-    &--main {
-      .sponsors__logo-placeholder {
-        border-color: v.$color-primary;
-      }
-
-      .sponsors__tier-badge {
-        background: rgba(v.$color-primary, 0.12);
-        color: v.$color-primary;
-        border-color: rgba(v.$color-primary, 0.3);
-      }
+    &--linked:hover {
+      opacity: 0.7;
     }
   }
 
   &__logo {
-    max-height: 64px;
+    max-height: 56px;
     width: auto;
     object-fit: contain;
   }
@@ -318,32 +368,63 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: v.$space-6 v.$space-12;
+    padding: v.$space-4 v.$space-10;
     border: 1px solid v.$color-border;
     border-radius: v.$border-radius-md;
-    min-width: 200px;
   }
 
   &__name {
-    font-size: v.$font-size-xl;
+    font-size: v.$font-size-lg;
     font-weight: v.$font-weight-bold;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
   }
 
-  &__tier-badge {
-    display: inline-block;
-    padding: v.$space-1 v.$space-3;
+  // Memberships row
+  &__members-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: v.$space-4;
+  }
+
+  &__member-card {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-1;
+    padding: v.$space-4 v.$space-6;
     border: 1px solid v.$color-border;
-    border-radius: v.$border-radius-sm;
+    border-radius: v.$border-radius-md;
+    text-decoration: none;
+    transition: border-color v.$transition-fast;
+    min-width: 240px;
+
+    &--linked:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+  }
+
+  &__member-tag {
     font-size: v.$font-size-xs;
     font-weight: v.$font-weight-semibold;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-1;
+  }
+
+  &__member-name {
+    font-size: v.$font-size-base;
+    font-weight: v.$font-weight-bold;
+  }
+
+  &__member-desc {
+    font-size: v.$font-size-sm;
     color: v.$color-text-muted;
   }
 
+  // CTA
   &__cta-text {
+    margin-top: v.$space-12;
     font-size: v.$font-size-sm;
     color: v.$color-text-muted;
   }

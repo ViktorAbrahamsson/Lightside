@@ -116,47 +116,97 @@ export function Home() {
         <div className={styles['sponsors__inner']}>
           <p className={styles['sponsors__label']} aria-hidden="true">Partners</p>
           <h2 id="sponsors-heading" className={styles['sponsors__heading']}>Our Sponsors</h2>
-          <div className={styles['sponsors__grid']}>
-            {sponsors.map((sponsor) => {
-              const hasUrl = Boolean(sponsor.websiteUrl && sponsor.websiteUrl !== '#');
-              const className = `${styles['sponsors__item']} ${styles[`sponsors__item--${sponsor.tier}`]} ${hasUrl ? styles['sponsors__item--linked'] : ''}`;
-              const inner = (
-                <>
-                  {sponsor.logoUrl ? (
-                    <img
-                      className={styles['sponsors__logo']}
-                      src={sponsor.logoUrl}
-                      alt={sponsor.name}
-                    />
+
+          {/* Main sponsor — full row */}
+          {sponsors.filter(s => s.tier === 'main').map((sponsor) => {
+            const hasUrl = Boolean(sponsor.websiteUrl && sponsor.websiteUrl !== '#');
+            const inner = (
+              <>
+                <span className={styles['sponsors__main-badge']}>Main Sponsor</span>
+                {sponsor.logoUrl ? (
+                  <img className={styles['sponsors__main-logo']} src={sponsor.logoUrl} alt={sponsor.name} />
+                ) : (
+                  <p className={styles['sponsors__main-name']}>{sponsor.name}</p>
+                )}
+              </>
+            );
+            return hasUrl ? (
+              <a key={sponsor.id} href={sponsor.websiteUrl} target="_blank" rel="noopener noreferrer"
+                className={`${styles['sponsors__main-card']} ${styles['sponsors__main-card--linked']}`}
+                aria-label={`${sponsor.name} — visit website (opens in new tab)`}>
+                {inner}
+              </a>
+            ) : (
+              <article key={sponsor.id} className={styles['sponsors__main-card']}>{inner}</article>
+            );
+          })}
+
+          {/* Partners */}
+          {sponsors.filter(s => s.tier === 'partner' || s.tier === 'sponsor').length > 0 && (
+            <div className={styles['sponsors__sub-section']}>
+              <p className={styles['sponsors__sub-label']}>Partners</p>
+              <div className={styles['sponsors__partners-row']}>
+                {sponsors.filter(s => s.tier === 'partner' || s.tier === 'sponsor').map((sponsor) => {
+                  const hasUrl = Boolean(sponsor.websiteUrl && sponsor.websiteUrl !== '#');
+                  const inner = sponsor.logoUrl ? (
+                    <img className={styles['sponsors__logo']} src={sponsor.logoUrl} alt={sponsor.name} />
                   ) : (
                     <div className={styles['sponsors__logo-placeholder']}>
                       <span className={styles['sponsors__name']}>{sponsor.name}</span>
                     </div>
-                  )}
-                  <span className={styles['sponsors__tier-badge']}>
-                    {sponsor.tier === 'main' ? 'Main Sponsor' : sponsor.tier}
-                  </span>
-                </>
-              );
+                  );
+                  return hasUrl ? (
+                    <a key={sponsor.id} href={sponsor.websiteUrl} target="_blank" rel="noopener noreferrer"
+                      className={`${styles['sponsors__item']} ${styles['sponsors__item--linked']}`}
+                      aria-label={`${sponsor.name} — visit website (opens in new tab)`}>
+                      {inner}
+                    </a>
+                  ) : (
+                    <article key={sponsor.id} className={styles['sponsors__item']} aria-label={sponsor.name}>
+                      {inner}
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
-              return hasUrl ? (
-                <a
-                  key={sponsor.id}
-                  href={sponsor.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={className}
-                  aria-label={`${sponsor.name} — visit website (opens in new tab)`}
-                >
-                  {inner}
-                </a>
-              ) : (
-                <article key={sponsor.id} className={className} aria-label={sponsor.name}>
-                  {inner}
-                </article>
-              );
-            })}
-          </div>
+          {/* Memberships */}
+          {sponsors.filter(s => s.tier === 'member').length > 0 && (
+            <div className={styles['sponsors__sub-section']}>
+              <p className={styles['sponsors__sub-label']}>Memberships</p>
+              <div className={styles['sponsors__members-row']}>
+                {sponsors.filter(s => s.tier === 'member').map((sponsor) => {
+                  const hasUrl = Boolean(sponsor.websiteUrl && sponsor.websiteUrl !== '#');
+                  const inner = (
+                    <>
+                      <span className={styles['sponsors__member-tag']}>Member of</span>
+                      {sponsor.logoUrl ? (
+                        <img className={styles['sponsors__logo']} src={sponsor.logoUrl} alt={sponsor.name} />
+                      ) : (
+                        <p className={styles['sponsors__member-name']}>{sponsor.name}</p>
+                      )}
+                      {sponsor.description && (
+                        <p className={styles['sponsors__member-desc']}>{sponsor.description}</p>
+                      )}
+                    </>
+                  );
+                  return hasUrl ? (
+                    <a key={sponsor.id} href={sponsor.websiteUrl} target="_blank" rel="noopener noreferrer"
+                      className={`${styles['sponsors__member-card']} ${styles['sponsors__member-card--linked']}`}
+                      aria-label={`${sponsor.name} — visit website (opens in new tab)`}>
+                      {inner}
+                    </a>
+                  ) : (
+                    <article key={sponsor.id} className={styles['sponsors__member-card']} aria-label={sponsor.name}>
+                      {inner}
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           <p className={styles['sponsors__cta-text']}>
             Interested in partnering with us?{' '}
             <Link

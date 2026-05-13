@@ -41,10 +41,10 @@
 }
 
 @mixin section-padding {
-  padding-block: v.$space-24;
+  padding-block: v.$space-16;
 
   @include respond-to(lg) {
-    padding-block: v.$space-32;
+    padding-block: v.$space-20;
   }
 }
 

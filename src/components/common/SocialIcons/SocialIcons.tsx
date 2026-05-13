@@ -1,7 +1,7 @@
 import type { SocialLink, SocialPlatform } from '@/types';
 import styles from './SocialIcons.module.scss';
 
-const LABELS: Record<SocialPlatform, string> = {
+export const SOCIAL_LABELS: Record<SocialPlatform, string> = {
   twitter: 'X (Twitter)',
   instagram: 'Instagram',
   twitch: 'Twitch',
@@ -67,7 +67,7 @@ function DiscordIcon() {
   );
 }
 
-const ICONS: Record<SocialPlatform, () => JSX.Element> = {
+export const SOCIAL_ICONS: Record<SocialPlatform, () => JSX.Element> = {
   twitter: TwitterIcon,
   instagram: InstagramIcon,
   twitch: TwitchIcon,
@@ -88,7 +88,7 @@ export function SocialIcons({ links, size = 'md' }: SocialIconsProps) {
   return (
     <ul className={`${styles['social-icons']} ${size === 'sm' ? styles['social-icons--sm'] : ''}`}>
       {links.map(({ platform, url }) => {
-        const Icon = ICONS[platform];
+        const Icon = SOCIAL_ICONS[platform];
         return (
           <li key={platform} className={styles['social-icons__item']}>
             <a
@@ -96,7 +96,7 @@ export function SocialIcons({ links, size = 'md' }: SocialIconsProps) {
               target="_blank"
               rel="noopener noreferrer"
               className={styles['social-icons__link']}
-              aria-label={LABELS[platform]}
+              aria-label={SOCIAL_LABELS[platform]}
             >
               <Icon />
             </a>

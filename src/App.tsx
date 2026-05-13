@@ -6,6 +6,7 @@ import { Home } from '@/pages/Home/Home';
 import { About } from '@/pages/About/About';
 import { Teams } from '@/pages/Teams/Teams';
 import { Contact } from '@/pages/Contact/Contact';
+import { Community } from '@/pages/Community/Community';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/community" element={<Community />} />
           </Routes>
         </div>
         <Footer />

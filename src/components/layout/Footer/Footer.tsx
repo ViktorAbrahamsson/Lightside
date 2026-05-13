@@ -1,13 +1,26 @@
 import { Link, NavLink } from 'react-router-dom';
 import { SocialIcons } from '@/components/common/SocialIcons/SocialIcons';
-import { headerSocials } from '@/data/contact';
+import { contactInfo } from '@/data/contact';
 import styles from './Footer.module.scss';
 
-const NAV_LINKS = [
-  { to: '/about', label: 'About' },
-  { to: '/teams', label: 'Teams' },
-  { to: '/contact', label: 'Contact' },
-];
+function ExternalLinkIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 12 12"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={styles['footer__ext-icon']}
+    >
+      <path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7" />
+      <path d="M8 1h3v3M11 1 6.5 5.5" />
+    </svg>
+  );
+}
 
 export function Footer() {
   return (
@@ -20,23 +33,34 @@ export function Footer() {
           <p className={styles['footer__tagline']}>
             Lundqvist Lightside — Competing from the shadows.
           </p>
+          <SocialIcons links={contactInfo.socials} size="sm" />
         </div>
 
-        <nav className={styles['footer__links']} aria-label="Footer navigation">
+        <nav className={styles['footer__col']} aria-label="Organization links">
+          <p className={styles['footer__col-heading']}>Organization</p>
           <ul>
-            {NAV_LINKS.map(({ to, label }) => (
-              <li key={to}>
-                <NavLink to={to} className={styles['footer__link']}>
-                  {label}
-                </NavLink>
-              </li>
-            ))}
+            <li>
+              <NavLink to="/about" className={styles['footer__col-link']}>
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/" className={styles['footer__col-link']}>
+                Sponsors
+              </NavLink>
+            </li>
+            <li>
+              <a
+                href="https://www.manatee.gg/collections/lundqvist-lightside"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles['footer__col-link']}
+              >
+                Merch Store <ExternalLinkIcon />
+              </a>
+            </li>
           </ul>
         </nav>
-
-        <div className={styles['footer__social']}>
-          <SocialIcons links={headerSocials} size="sm" />
-        </div>
       </div>
 
       <div className={styles['footer__legal']}>

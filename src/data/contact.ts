@@ -9,11 +9,11 @@ export const contactInfo: ContactInfo = {
   discordUrl: 'https://discord.gg/vhUSjARa3N',
   location: 'Sweden',
   socials: [
-    { platform: 'twitter', url: 'https://x.com/LightsideSWE' },
-    { platform: 'instagram', url: 'https://www.instagram.com/Lundqvistlightside/' },
-    { platform: 'twitch', url: 'https://www.twitch.tv/LundqvistLightside' },
-    { platform: 'youtube', url: 'https://www.youtube.com/@LundqvistLightside' },
-    { platform: 'tiktok', url: 'https://www.tiktok.com/@Lightsideswe' },
-    { platform: 'facebook', url: 'https://www.facebook.com/LightsideGaming' },
+    { platform: 'twitter', url: 'https://x.com/LightsideSWE', handle: '@LightsideSWE' },
+    { platform: 'instagram', url: 'https://www.instagram.com/Lundqvistlightside/', handle: '@Lundqvistlightside' },
+    { platform: 'twitch', url: 'https://www.twitch.tv/LundqvistLightside', handle: 'LundqvistLightside' },
+    { platform: 'youtube', url: 'https://www.youtube.com/@LundqvistLightside', handle: '@LundqvistLightside' },
+    { platform: 'tiktok', url: 'https://www.tiktok.com/@Lightsideswe', handle: '@Lightsideswe' },
+    { platform: 'facebook', url: 'https://www.facebook.com/LightsideGaming', handle: 'LightsideGaming' },
   ],
 };

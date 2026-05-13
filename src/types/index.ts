@@ -10,6 +10,7 @@ export type SocialPlatform =
 export interface SocialLink {
   platform: SocialPlatform;
   url: string;
+  handle?: string;
 }
 
 export type LoLRole =
@@ -44,7 +45,7 @@ export interface Team {
   members: TeamMember[];
 }
 
-export type SponsorTier = 'main' | 'partner' | 'sponsor';
+export type SponsorTier = 'main' | 'partner' | 'sponsor' | 'member';
 
 export interface Sponsor {
   id: string;
