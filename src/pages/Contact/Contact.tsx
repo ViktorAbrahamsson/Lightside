@@ -1,5 +1,6 @@
 import { Button } from '@/components/common/Button/Button';
 import { PageSeo } from '@/components/common/PageSeo/PageSeo';
+import { Reveal } from '@/components/common/Reveal/Reveal';
 import { SocialIcons } from '@/components/common/SocialIcons/SocialIcons';
 import { contactInfo } from '@/data/contact';
 import styles from './Contact.module.scss';
@@ -41,7 +42,7 @@ export function Contact() {
 
         <section className={styles['partner']} aria-labelledby="partner-heading">
           <div className={styles['partner__inner']}>
-            <div className={styles['partner__header']}>
+            <Reveal><div className={styles['partner__header']}>
               <p className={styles['partner__label']} aria-hidden="true">Sponsorships & Partnerships</p>
               <h2 id="partner-heading" className={styles['partner__heading']}>
                 Put your brand at the center of Swedish esports.
@@ -64,21 +65,23 @@ export function Contact() {
                 or email us directly at{' '}
                 <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
               </p>
-            </div>
+            </div></Reveal>
 
             <div className={styles['partner__perks']} role="list" aria-label="Partnership benefits">
-              {PARTNER_PERKS.map(({ title, body }) => (
-                <div key={title} className={styles['partner__perk']} role="listitem">
-                  <h3 className={styles['partner__perk-title']}>{title}</h3>
-                  <p className={styles['partner__perk-body']}>{body}</p>
-                </div>
+              {PARTNER_PERKS.map(({ title, body }, i) => (
+                <Reveal key={title} delay={i * 100}>
+                  <div className={styles['partner__perk']} role="listitem">
+                    <h3 className={styles['partner__perk-title']}>{title}</h3>
+                    <p className={styles['partner__perk-body']}>{body}</p>
+                  </div>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
         <section className={styles['community']} aria-labelledby="community-heading">
-          <div className={styles['community__inner']}>
+          <Reveal><div className={styles['community__inner']}>
             <div className={styles['community__block']}>
               <p className={styles['community__label']} aria-hidden="true">Community</p>
               <h2 id="community-heading" className={styles['community__heading']}>Join the conversation</h2>
@@ -106,7 +109,7 @@ export function Contact() {
                 <p className={styles['community__meta-value']}>{contactInfo.location}</p>
               </div>
             </div>
-          </div>
+          </div></Reveal>
         </section>
       </main>
     </>

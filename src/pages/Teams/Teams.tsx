@@ -1,6 +1,7 @@
 import { teams } from '@/data/teams';
 import { MemberCard, StaffCard } from '@/components/common/MemberCard/MemberCard';
 import { PageSeo } from '@/components/common/PageSeo/PageSeo';
+import { Reveal } from '@/components/common/Reveal/Reveal';
 import type { LoLRole } from '@/types';
 import styles from './Teams.module.scss';
 
@@ -43,7 +44,7 @@ export function Teams() {
               aria-labelledby={headingId}
             >
               <div className={styles['team-roster__inner']}>
-                <header className={styles['team-roster__header']}>
+                <Reveal><header className={styles['team-roster__header']}>
                   <p className={styles['team-roster__game']}>{team.game}</p>
                   <h2
                     id={headingId}
@@ -54,22 +55,24 @@ export function Teams() {
                   </h2>
                   <p className={styles['team-roster__desc']}>{team.description}</p>
                   <div className={styles['team-roster__divider']} aria-hidden="true" />
-                </header>
+                </header></Reveal>
 
                 {team.playersComingSoon ? (
-                  <div className={styles['team-roster__coming-soon']}>
+                  <Reveal><div className={styles['team-roster__coming-soon']}>
                     <p className={styles['team-roster__coming-soon-text']}>Roster coming soon</p>
-                  </div>
+                  </div></Reveal>
                 ) : (
                   <div
                     className={styles['team-roster__players']}
                     role="list"
                     aria-label={`${team.name} players`}
                   >
-                    {players.map((member) => (
-                      <div key={member.id} role="listitem">
-                        <MemberCard member={member} accentColor={team.accentColor} />
-                      </div>
+                    {players.map((member, i) => (
+                      <Reveal key={member.id} delay={i * 100}>
+                        <div role="listitem">
+                          <MemberCard member={member} accentColor={team.accentColor} />
+                        </div>
+                      </Reveal>
                     ))}
                   </div>
                 )}
@@ -82,10 +85,12 @@ export function Teams() {
                       role="list"
                       aria-label={`${team.name} staff`}
                     >
-                      {staff.map((member) => (
-                        <div key={member.id} role="listitem">
-                          <StaffCard member={member} accentColor={team.accentColor} />
-                        </div>
+                      {staff.map((member, i) => (
+                        <Reveal key={member.id} delay={i * 100}>
+                          <div role="listitem">
+                            <StaffCard member={member} accentColor={team.accentColor} />
+                          </div>
+                        </Reveal>
                       ))}
                     </div>
                   </div>

@@ -1,11 +1,32 @@
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/common/Button/Button';
 import { PageSeo } from '@/components/common/PageSeo/PageSeo';
+import { Reveal } from '@/components/common/Reveal/Reveal';
 import { teams } from '@/data/teams';
 import { sponsors } from '@/data/sponsors';
 import styles from './Home.module.scss';
 
 export function Home() {
+  const bgRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const bg = bgRef.current;
+    if (!bg) return;
+    let frame: number;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        bg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
     <>
     <PageSeo
@@ -30,9 +51,9 @@ export function Home() {
     }) }} />
     <main>
       <section className={styles['hero']} aria-label="Hero">
-        <div className={styles['hero__bg']} aria-hidden="true" />
+        <div ref={bgRef} className={styles['hero__bg']} aria-hidden="true" />
         <div className={styles['hero__overlay']} aria-hidden="true" />
-        <div className={styles['hero__content']}>
+        <Reveal><div className={styles['hero__content']}>
           <p className={styles['hero__eyebrow']} aria-hidden="true">Lundqvist</p>
           <h1 className={styles['hero__title']}>
             <span className={styles['hero__title-light']}>LIGHT</span>SIDE
@@ -46,11 +67,11 @@ export function Home() {
               About Us
             </Button>
           </div>
-        </div>
+        </div></Reveal>
       </section>
 
       <section className={styles['about-preview']} aria-labelledby="about-preview-heading">
-        <div className={styles['about-preview__inner']}>
+        <Reveal><div className={styles['about-preview__inner']}>
           <div className={styles['about-preview__text']}>
             <p className={styles['about-preview__label']} aria-hidden="true">Who we are</p>
             <h2 id="about-preview-heading" className={styles['about-preview__heading']}>
@@ -78,11 +99,11 @@ export function Home() {
               <img src="/logo-white.png" alt="" />
             </div>
           </div>
-        </div>
+        </div></Reveal>
       </section>
 
       <section className={styles['team-previews']} aria-labelledby="teams-preview-heading">
-        <div className={styles['team-previews__inner']}>
+        <Reveal><div className={styles['team-previews__inner']}>
           <p className={styles['team-previews__label']} aria-hidden="true">Compete</p>
           <h2 id="teams-preview-heading" className={styles['team-previews__heading']}>Our Teams</h2>
           <div className={styles['team-previews__grid']}>
@@ -109,11 +130,11 @@ export function Home() {
               </article>
             ))}
           </div>
-        </div>
+        </div></Reveal>
       </section>
 
       <section className={styles['sponsors']} aria-labelledby="sponsors-heading">
-        <div className={styles['sponsors__inner']}>
+        <Reveal><div className={styles['sponsors__inner']}>
           <p className={styles['sponsors__label']} aria-hidden="true">Partners</p>
           <h2 id="sponsors-heading" className={styles['sponsors__heading']}>Our Sponsors</h2>
 
@@ -217,7 +238,7 @@ export function Home() {
               Get in touch <span aria-hidden="true">→</span>
             </Link>
           </p>
-        </div>
+        </div></Reveal>
       </section>
     </main>
     </>

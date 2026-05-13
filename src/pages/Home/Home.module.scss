@@ -8,11 +8,15 @@
 
   &__bg {
     position: absolute;
-    inset: 0;
+    top: -15%;
+    left: 0;
+    right: 0;
+    bottom: -15%;
     background-image: url('/LLS_Mountain_Darker.png');
     background-size: cover;
     background-position: center 70%;
     background-repeat: no-repeat;
+    will-change: transform;
   }
 
   &__overlay {

@@ -1,5 +1,6 @@
 import { Button } from '@/components/common/Button/Button';
 import { PageSeo } from '@/components/common/PageSeo/PageSeo';
+import { Reveal } from '@/components/common/Reveal/Reveal';
 import { sponsors } from '@/data/sponsors';
 import { contactInfo } from '@/data/contact';
 import styles from './About.module.scss';
@@ -25,7 +26,7 @@ export function About() {
       </section>
 
       <section className={styles['story']} aria-labelledby="story-heading">
-        <div className={styles['story__inner']}>
+        <Reveal><div className={styles['story__inner']}>
           <div className={styles['story__text']}>
             <p className={styles['story__label']} aria-hidden="true">Our story</p>
             <h2 id="story-heading" className={styles['story__heading']}>
@@ -49,36 +50,38 @@ export function About() {
               player looking to compete or a fan cheering from the sidelines — you belong here.
             </p>
           </div>
-        </div>
+        </div></Reveal>
       </section>
 
       <section className={styles['mission']} aria-label="Our mission">
         <div className={styles['mission__inner']}>
-          <div className={styles['mission__callout']}>
+          <Reveal><div className={styles['mission__callout']}>
             <p className={styles['mission__label']} aria-hidden="true">Our mission</p>
             <blockquote className={styles['mission__quote']}>
               To develop competitive talent, foster community, and represent our partners with
               pride on every stage we compete on.
             </blockquote>
-          </div>
+          </div></Reveal>
           <div className={styles['mission__values']} role="list">
             {[
               { title: 'Compete', body: 'We show up to win. Every scrim, every match, every tournament — we bring our best.' },
               { title: 'Develop', body: 'We invest in our players. Growth happens on and off the server.' },
               { title: 'Community', body: 'We build bridges between players and fans. Esports is nothing without its people.' },
               { title: 'Represent', body: 'We carry our sponsors and our name with honor. Results speak louder than words.' },
-            ].map(({ title, body }) => (
-              <div key={title} className={styles['mission__value']} role="listitem">
-                <h3 className={styles['mission__value-title']}>{title}</h3>
-                <p className={styles['mission__value-body']}>{body}</p>
-              </div>
+            ].map(({ title, body }, i) => (
+              <Reveal key={title} delay={i * 100}>
+                <div className={styles['mission__value']} role="listitem">
+                  <h3 className={styles['mission__value-title']}>{title}</h3>
+                  <p className={styles['mission__value-body']}>{body}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       <section className={styles['sponsor-spotlight']} aria-labelledby="sponsor-heading">
-        <div className={styles['sponsor-spotlight__inner']}>
+        <Reveal><div className={styles['sponsor-spotlight__inner']}>
           <p className={styles['sponsor-spotlight__label']} aria-hidden="true">Main Sponsor</p>
           <h2 id="sponsor-heading" className={styles['sponsor-spotlight__heading']}>Powered by Lundqvist</h2>
           {sponsors
@@ -110,11 +113,11 @@ export function About() {
                 )}
               </div>
             ))}
-        </div>
+        </div></Reveal>
       </section>
 
       <section className={styles['cta-section']} aria-labelledby="cta-heading">
-        <div className={styles['cta-section__inner']}>
+        <Reveal><div className={styles['cta-section__inner']}>
           <h2 id="cta-heading" className={styles['cta-section__heading']}>Join the community</h2>
           <p className={styles['cta-section__body']}>
             Follow our journey, support our teams, and be part of something growing.
@@ -134,7 +137,7 @@ export function About() {
               Contact Us
             </Button>
           </div>
-        </div>
+        </div></Reveal>
       </section>
     </main>
     </>

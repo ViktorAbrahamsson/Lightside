@@ -1,4 +1,5 @@
 import { PageSeo } from '@/components/common/PageSeo/PageSeo';
+import { Reveal } from '@/components/common/Reveal/Reveal';
 import { SOCIAL_ICONS, SOCIAL_LABELS } from '@/components/common/SocialIcons/SocialIcons';
 import { contactInfo } from '@/data/contact';
 import type { SocialPlatform } from '@/types';
@@ -40,69 +41,74 @@ export function Community() {
           </div>
         </section>
 
-        <a
-          href="https://www.manatee.gg/collections/lundqvist-lightside"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles['merch-banner']}
-          aria-label="Official Merch Store — Shop Now (opens in new tab)"
-        >
-          <div className={styles['merch-banner__inner']}>
-            <div className={styles['merch-banner__left']}>
-              <p className={styles['merch-banner__title']}>Official Merch Store</p>
-              <p className={styles['merch-banner__sub']}>Jerseys, hoodies & more — powered by Manatee.GG</p>
+        <Reveal>
+          <a
+            href="https://www.manatee.gg/collections/lundqvist-lightside"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles['merch-banner']}
+            aria-label="Official Merch Store — Shop Now (opens in new tab)"
+          >
+            <div className={styles['merch-banner__inner']}>
+              <div className={styles['merch-banner__left']}>
+                <p className={styles['merch-banner__title']}>Official Merch Store</p>
+                <p className={styles['merch-banner__sub']}>Jerseys, hoodies & more — powered by Manatee.GG</p>
+              </div>
+              <span className={styles['merch-banner__cta']} aria-hidden="true">Shop Now →</span>
             </div>
-            <span className={styles['merch-banner__cta']} aria-hidden="true">Shop Now →</span>
-          </div>
-        </a>
+          </a>
+        </Reveal>
 
         <section className={styles['community']} aria-label="Community channels">
           <div className={styles['community__inner']}>
-            <a
-              href={contactInfo.discordUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles['discord-card']}
-              aria-label="Join our Discord (opens in new tab)"
-            >
-              <div className={styles['discord-card__icon-wrap']} aria-hidden="true">
-                <DiscordIcon />
-              </div>
-              <h3 className={styles['discord-card__heading']}>Join Our Discord</h3>
-              <p className={styles['discord-card__body']}>
-                The Lightside Discord is our home base. Watch matches together, chat with players,
-                get announcements first, and reach us directly for any questions. Everyone is
-                welcome — fans, players and aspiring pros alike.
-              </p>
-              <span className={styles['discord-card__cta']}>Join Discord →</span>
-            </a>
+            <Reveal>
+              <a
+                href={contactInfo.discordUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles['discord-card']}
+                aria-label="Join our Discord (opens in new tab)"
+              >
+                <div className={styles['discord-card__icon-wrap']} aria-hidden="true">
+                  <DiscordIcon />
+                </div>
+                <h3 className={styles['discord-card__heading']}>Join Our Discord</h3>
+                <p className={styles['discord-card__body']}>
+                  The Lightside Discord is our home base. Watch matches together, chat with players,
+                  get announcements first, and reach us directly for any questions. Everyone is
+                  welcome — fans, players and aspiring pros alike.
+                </p>
+                <span className={styles['discord-card__cta']}>Join Discord →</span>
+              </a>
+            </Reveal>
 
             <div className={styles['socials']} role="list" aria-label="Social media channels">
-              {contactInfo.socials.map(({ platform, url, handle }) => {
+              {contactInfo.socials.map(({ platform, url, handle }, i) => {
                 const Icon = SOCIAL_ICONS[platform];
                 return (
-                  <a
-                    key={platform}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles['social-row']}
-                    role="listitem"
-                    aria-label={`${SOCIAL_LABELS[platform]}${handle ? ` — ${handle}` : ''} (opens in new tab)`}
-                  >
-                    <div
-                      className={styles['social-row__icon-wrap']}
-                      style={{ background: PLATFORM_COLORS[platform] }}
-                      aria-hidden="true"
+                  <Reveal key={platform} delay={i * 80}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles['social-row']}
+                      role="listitem"
+                      aria-label={`${SOCIAL_LABELS[platform]}${handle ? ` — ${handle}` : ''} (opens in new tab)`}
                     >
-                      <Icon />
-                    </div>
-                    <div className={styles['social-row__text']}>
-                      <p className={styles['social-row__name']}>{SOCIAL_LABELS[platform]}</p>
-                      {handle && <p className={styles['social-row__handle']}>{handle}</p>}
-                    </div>
-                    <span className={styles['social-row__arrow']} aria-hidden="true">→</span>
-                  </a>
+                      <div
+                        className={styles['social-row__icon-wrap']}
+                        style={{ background: PLATFORM_COLORS[platform] }}
+                        aria-hidden="true"
+                      >
+                        <Icon />
+                      </div>
+                      <div className={styles['social-row__text']}>
+                        <p className={styles['social-row__name']}>{SOCIAL_LABELS[platform]}</p>
+                        {handle && <p className={styles['social-row__handle']}>{handle}</p>}
+                      </div>
+                      <span className={styles['social-row__arrow']} aria-hidden="true">→</span>
+                    </a>
+                  </Reveal>
                 );
               })}
             </div>
