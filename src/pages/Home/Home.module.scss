@@ -355,11 +355,10 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    transition: opacity v.$transition-fast;
+  }
 
-    &--linked:hover {
-      opacity: 0.7;
-    }
+  &__item--linked:hover &__logo-placeholder {
+    border-color: rgba(255, 255, 255, 0.25);
   }
 
   &__logo {
@@ -375,6 +374,7 @@
     padding: v.$space-4 v.$space-10;
     border: 1px solid v.$color-border;
     border-radius: v.$border-radius-md;
+    transition: border-color v.$transition-fast;
   }
 
   &__name {

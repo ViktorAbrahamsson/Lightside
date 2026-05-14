@@ -2,7 +2,8 @@ import { Helmet } from 'react-helmet-async';
 
 const SITE_NAME = 'Lundqvist Lightside';
 const SITE_URL = 'https://www.lightsideesports.gg';
-const OG_IMAGE = `${SITE_URL}/lightside-logo--blue-gradient.png`;
+const OG_IMAGE = `${SITE_URL}/LLS_Mountain_Darker.png`;
+const OG_IMAGE_ALT = 'A dark mountain landscape — Lundqvist Lightside Swedish Esports';
 const TWITTER_HANDLE = '@LightsideSWE';
 
 interface PageSeoProps {
@@ -28,8 +29,8 @@ export function PageSeo({ title, description, path = '' }: PageSeoProps) {
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={OG_IMAGE} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:alt" content={OG_IMAGE_ALT} />
       <meta property="og:locale" content="en_SE" />
 
       {/* Twitter Card */}
@@ -38,6 +39,7 @@ export function PageSeo({ title, description, path = '' }: PageSeoProps) {
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="twitter:image:alt" content={OG_IMAGE_ALT} />
     </Helmet>
   );
 }
