@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 const SITE_NAME = 'Lundqvist Lightside';
-const SITE_URL = 'https://www.lightsideesports.gg';
+const SITE_URL = 'https://lightside.pro';
 const OG_IMAGE = `${SITE_URL}/LLS_Mountain_Darker.png`;
 const OG_IMAGE_ALT = 'A dark mountain landscape — Lundqvist Lightside Swedish Esports';
 const TWITTER_HANDLE = '@LightsideSWE';
