@@ -5,7 +5,7 @@
 
   @include m.respond-to(md) {
     grid-template-columns: 1fr 1fr;
-    align-items: start;
+    align-items: stretch;
   }
 
   @include m.respond-to(lg) {
@@ -79,9 +79,14 @@
 }
 
 .socials {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: v.$space-2;
+  align-content: center;
+
+  @include m.respond-to(md) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .social-row {
