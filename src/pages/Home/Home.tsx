@@ -89,7 +89,7 @@ export function Home() {
             <p className={styles['about-preview__body']}>
               Lundqvist Lightside is a competitive esports organization based in Sweden. We bring
               together skilled players, dedicated coaches, and passionate supporters under one
-              banner — with the shared goal of reaching the top of Swedish and Nordic competition.
+              banner - with the shared goal of reaching the top of Swedish and Nordic competition.
             </p>
             <p className={styles['about-preview__body']}>
               We believe in developing talent, building community, and representing our sponsors
@@ -121,7 +121,7 @@ export function Home() {
                 key={team.id}
                 className={styles['team-previews__card']}
                 style={{ '--team-accent': team.accentColor } as React.CSSProperties}
-                aria-label={`${team.name} — ${team.game}`}
+                aria-label={`${team.name} - ${team.game}`}
               >
                 <div className={styles['team-previews__card-accent']} aria-hidden="true" />
                 <div className={styles['team-previews__card-body']}>
@@ -147,7 +147,7 @@ export function Home() {
           <p className={styles['sponsors__label']} aria-hidden="true">Partners</p>
           <h2 id="sponsors-heading" className={styles['sponsors__heading']}>Our Sponsors</h2>
 
-          {/* Main sponsor — full row */}
+          {/* Main sponsor - full row */}
           {sponsors.filter(s => s.tier === 'main').map((sponsor) => {
             const hasUrl = Boolean(sponsor.websiteUrl && sponsor.websiteUrl !== '#');
             const inner = (
@@ -163,7 +163,7 @@ export function Home() {
             return hasUrl ? (
               <a key={sponsor.id} href={sponsor.websiteUrl} target="_blank" rel="noopener noreferrer"
                 className={`${styles['sponsors__main-card']} ${styles['sponsors__main-card--linked']}`}
-                aria-label={`${sponsor.name} — visit website (opens in new tab)`}>
+                aria-label={`${sponsor.name} - visit website (opens in new tab)`}>
                 {inner}
               </a>
             ) : (
@@ -188,7 +188,7 @@ export function Home() {
                   return hasUrl ? (
                     <a key={sponsor.id} href={sponsor.websiteUrl} target="_blank" rel="noopener noreferrer"
                       className={`${styles['sponsors__item']} ${styles['sponsors__item--linked']}`}
-                      aria-label={`${sponsor.name} — visit website (opens in new tab)`}>
+                      aria-label={`${sponsor.name} - visit website (opens in new tab)`}>
                       {inner}
                     </a>
                   ) : (
@@ -224,7 +224,7 @@ export function Home() {
                   return hasUrl ? (
                     <a key={sponsor.id} href={sponsor.websiteUrl} target="_blank" rel="noopener noreferrer"
                       className={`${styles['sponsors__member-card']} ${styles['sponsors__member-card--linked']}`}
-                      aria-label={`${sponsor.name} — visit website (opens in new tab)`}>
+                      aria-label={`${sponsor.name} - visit website (opens in new tab)`}>
                       {inner}
                     </a>
                   ) : (

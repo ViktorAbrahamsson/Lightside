@@ -111,7 +111,7 @@ export const teams: Team[] = [
     game: 'League of Legends',
     accentColor: '#ff0839',
     description:
-      'Our second team — a proving ground for rising talent. Darkside operates in the shadows, cultivating the next generation of competitive players who are hungry to step into the spotlight.',
+      'Our second team - a proving ground for rising talent. Darkside operates in the shadows, cultivating the next generation of competitive players who are hungry to step into the spotlight.',
     playersComingSoon: true,
     members: [
       {

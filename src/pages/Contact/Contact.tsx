@@ -16,7 +16,7 @@ const PARTNER_PERKS = [
   },
   {
     title: 'Growing Presence',
-    body: 'We are actively expanding our competitive footprint — get in early as we scale across multiple titles and events.',
+    body: 'We are actively expanding our competitive footprint - get in early as we scale across multiple titles and events.',
   },
 ];
 
@@ -50,7 +50,7 @@ export function Contact() {
               <p className={styles['partner__sub']}>
                 Lundqvist Lightside is building one of Sweden's most recognizable competitive esports
                 brands. We are looking for partners who share our ambition and want to grow alongside us.
-                Whether you're a local business or an established brand — there's a place for you here.
+                Whether you're a local business or an established brand - there's a place for you here.
               </p>
               <Button
                 as="a"

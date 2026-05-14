@@ -29,7 +29,7 @@ export function Teams() {
     <>
       <PageSeo
         title="Our Teams"
-        description="Meet the Lightside and Darkside rosters — Lundqvist Lightside's League of Legends teams competing in Swedish and Nordic circuits."
+        description="Meet the Lightside and Darkside rosters - Lundqvist Lightside's League of Legends teams competing in Swedish and Nordic circuits."
         path="/teams"
       />
       <main>

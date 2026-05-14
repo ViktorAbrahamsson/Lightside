@@ -40,7 +40,7 @@ export function CommunityChannels() {
           <p className={styles['discord-card__body']}>
             The Lightside Discord is our home base. Watch matches together, chat with players,
             get announcements first, and reach us directly for any questions. Everyone is
-            welcome — fans, players and aspiring pros alike.
+            welcome - fans, players and aspiring pros alike.
           </p>
           <span className={styles['discord-card__cta']}>Join Discord →</span>
         </a>
@@ -57,7 +57,7 @@ export function CommunityChannels() {
                 rel="noopener noreferrer"
                 className={styles['social-row']}
                 role="listitem"
-                aria-label={`${SOCIAL_LABELS[platform]}${handle ? ` — ${handle}` : ''} (opens in new tab)`}
+                aria-label={`${SOCIAL_LABELS[platform]}${handle ? ` - ${handle}` : ''} (opens in new tab)`}
               >
                 <div
                   className={styles['social-row__icon-wrap']}

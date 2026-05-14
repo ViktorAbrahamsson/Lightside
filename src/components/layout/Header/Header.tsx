@@ -39,7 +39,7 @@ export function Header() {
       role="banner"
     >
       <div className={styles['header__inner']}>
-        <Link to="/" className={styles['header__logo']} aria-label="Lightside — Home" onClick={closeMenu}>
+        <Link to="/" className={styles['header__logo']} aria-label="Lightside - Home" onClick={closeMenu}>
           <img src="/lightside-logo--blue-gradient.png" alt="Lightside" height={36} />
         </Link>
 

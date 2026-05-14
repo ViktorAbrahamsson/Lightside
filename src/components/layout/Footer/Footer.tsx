@@ -27,11 +27,11 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={styles['footer__inner']}>
         <div className={styles['footer__brand']}>
-          <Link to="/" aria-label="Lightside — Home">
+          <Link to="/" aria-label="Lightside - Home">
             <img src="/lightside-logo--blue-gradient.png" alt="Lightside" height={32} />
           </Link>
           <p className={styles['footer__tagline']}>
-            Lundqvist Lightside — Competing from the shadows.
+            Lundqvist Lightside - Competing from the shadows.
           </p>
           <SocialIcons links={contactInfo.socials} size="sm" />
         </div>

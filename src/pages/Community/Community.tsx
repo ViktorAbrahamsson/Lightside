@@ -25,12 +25,12 @@ export function Community() {
           target="_blank"
           rel="noopener noreferrer"
           className={styles['merch-banner']}
-          aria-label="Official Merch Store — Shop Now (opens in new tab)"
+          aria-label="Official Merch Store - Shop Now (opens in new tab)"
         >
           <div className={styles['merch-banner__inner']}>
             <div className={styles['merch-banner__left']}>
               <p className={styles['merch-banner__title']}>Official Merch Store</p>
-              <p className={styles['merch-banner__sub']}>Jerseys, hoodies & more — powered by Manatee.GG</p>
+              <p className={styles['merch-banner__sub']}>Jerseys, hoodies & more - powered by Manatee.GG</p>
             </div>
             <span className={styles['merch-banner__cta']} aria-hidden="true">Shop Now →</span>
           </div>

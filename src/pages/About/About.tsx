@@ -10,7 +10,7 @@ export function About() {
     <>
     <PageSeo
       title="About Us"
-      description="Learn about Lundqvist Lightside — our story, mission, and the values that drive us to compete at the highest level in Swedish esports."
+      description="Learn about Lundqvist Lightside - our story, mission, and the values that drive us to compete at the highest level in Swedish esports."
       path="/about"
     />
     <main>
@@ -35,19 +35,19 @@ export function About() {
             <p className={styles['story__body']}>
               Lundqvist Lightside was founded with a single purpose: to build a competitive
               esports organization that Sweden could be proud of. Starting in League of Legends,
-              we set our sights on the Swedish and Nordic competitive scenes — and we haven't
+              we set our sights on the Swedish and Nordic competitive scenes - and we haven't
               looked back since.
             </p>
             <p className={styles['story__body']}>
               We operate two teams under our banner. <strong>Lightside</strong> is our flagship
               roster, competing at the highest level we can reach. <strong>Darkside</strong> is
-              our development team — a proving ground where raw talent is shaped into competitive
+              our development team - a proving ground where raw talent is shaped into competitive
               players ready to step up.
             </p>
             <p className={styles['story__body']}>
               Beyond competition, we are building a community. A place where players, fans, and
               supporters come together around a shared passion for esports. Whether you're a
-              player looking to compete or a fan cheering from the sidelines — you belong here.
+              player looking to compete or a fan cheering from the sidelines - you belong here.
             </p>
           </div>
         </div></Reveal>
@@ -64,7 +64,7 @@ export function About() {
           </div></Reveal>
           <div className={styles['mission__values']} role="list">
             {[
-              { title: 'Compete', body: 'We show up to win. Every scrim, every match, every tournament — we bring our best.' },
+              { title: 'Compete', body: 'We show up to win. Every scrim, every match, every tournament - we bring our best.' },
               { title: 'Develop', body: 'We invest in our players. Growth happens on and off the server.' },
               { title: 'Community', body: 'We build bridges between players and fans. Esports is nothing without its people.' },
               { title: 'Represent', body: 'We carry our sponsors and our name with honor. Results speak louder than words.' },
