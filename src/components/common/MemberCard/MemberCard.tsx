@@ -10,6 +10,9 @@ const ROLE_LABELS: Record<LoLRole, string> = {
   coach: 'Head Coach',
   'co-coach': 'Co Head Coach',
   'assistant-coach': 'Assistant Coach',
+  'strategic-coach': 'Strategic Coach',
+  'head-of-darkside': 'Head of Darkside',
+  'co-head-of-darkside': 'Co-Head of Darkside',
   manager: 'Manager',
   analyst: 'Analyst',
 };
@@ -59,11 +62,14 @@ const ROLE_ICONS: Record<LoLRole, string> = {
   mid:     '/Role=Mid.png',
   bot:     '/Role=Bot.png',
   support: '/Role=Support.png',
-  coach:             '/shield-white.png',
-  'co-coach':        '/shield-white.png',
-  'assistant-coach': '/shield-white.png',
-  manager:          '/shield-white.png',
-  analyst:          '/shield-white.png',
+  coach:                '/shield-white.png',
+  'co-coach':           '/shield-white.png',
+  'assistant-coach':    '/shield-white.png',
+  'strategic-coach':    '/shield-white.png',
+  'head-of-darkside':   '/shield-white.png',
+  'co-head-of-darkside': '/shield-white.png',
+  manager:              '/shield-white.png',
+  analyst:              '/shield-white.png',
 };
 
 function RoleIcon({ role }: { role: LoLRole }) {

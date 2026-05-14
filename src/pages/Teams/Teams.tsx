@@ -7,7 +7,7 @@ import { Reveal } from '@/components/common/Reveal/Reveal';
 import type { LoLRole } from '@/types';
 import styles from './Teams.module.scss';
 
-const ROLE_ORDER: LoLRole[] = ['top', 'jungle', 'mid', 'bot', 'support', 'coach', 'co-coach', 'assistant-coach', 'manager', 'analyst'];
+const ROLE_ORDER: LoLRole[] = ['top', 'jungle', 'mid', 'bot', 'support', 'head-of-darkside', 'co-head-of-darkside', 'coach', 'co-coach', 'assistant-coach', 'strategic-coach', 'analyst', 'manager'];
 
 function sortByRole<T extends { role: LoLRole }>(members: T[]) {
   return [...members].sort((a, b) => ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role));

@@ -57,13 +57,11 @@ export const teams: Team[] = [
       {
         id: 'ls-coach',
         name: '',
-        ign: 'Utama',
+        ign: 'Lyovik',
         role: 'coach',
         isStaff: true,
         imageUrl: undefined,
-        socials: [
-          { platform: 'twitter', url: 'https://x.com/UtamaLamaRama' },
-        ],
+        socials: [],
       },
       {
         id: 'ls-assistant-coach',
@@ -75,6 +73,24 @@ export const teams: Team[] = [
         socials: [
           { platform: 'twitter', url: 'https://x.com/Narco_lol' },
         ],
+      },
+      {
+        id: 'ls-strategic-coach',
+        name: '',
+        ign: 'Amarillo',
+        role: 'strategic-coach',
+        isStaff: true,
+        imageUrl: undefined,
+        socials: [],
+      },
+      {
+        id: 'ls-analyst',
+        name: '',
+        ign: 'Craith',
+        role: 'analyst',
+        isStaff: true,
+        imageUrl: undefined,
+        socials: [],
       },
       {
         id: 'ls-manager',
@@ -99,10 +115,10 @@ export const teams: Team[] = [
     playersComingSoon: true,
     members: [
       {
-        id: 'ds-coach',
+        id: 'ds-head',
         name: '',
         ign: 'Lejon',
-        role: 'coach',
+        role: 'head-of-darkside',
         isStaff: true,
         imageUrl: undefined,
         socials: [
@@ -110,15 +126,24 @@ export const teams: Team[] = [
         ],
       },
       {
-        id: 'ds-co-coach',
+        id: 'ds-co-head',
         name: '',
         ign: 'Greedlife',
-        role: 'co-coach',
+        role: 'co-head-of-darkside',
         isStaff: true,
         imageUrl: undefined,
         socials: [
           { platform: 'twitter', url: 'https://x.com/Greedlife1' },
         ],
+      },
+      {
+        id: 'ds-coach',
+        name: '',
+        ign: 'Rico',
+        role: 'coach',
+        isStaff: true,
+        imageUrl: undefined,
+        socials: [],
       },
       {
         id: 'ds-manager-ayvar',

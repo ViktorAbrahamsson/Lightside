@@ -22,6 +22,9 @@ export type LoLRole =
   | 'coach'
   | 'co-coach'
   | 'assistant-coach'
+  | 'strategic-coach'
+  | 'head-of-darkside'
+  | 'co-head-of-darkside'
   | 'manager'
   | 'analyst';
 
