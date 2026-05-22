@@ -39,9 +39,9 @@ export function About() {
               looked back since.
             </p>
             <p className={styles['story__body']}>
-              We operate two teams under our banner. <strong>Lightside</strong> is our flagship
-              roster, competing at the highest level we can reach. <strong>Darkside</strong> is
-              our development team - a proving ground where raw talent is shaped into competitive
+              We currently operate two teams under our banner. <strong className="lightside">Lightside</strong> is our flagship
+              roster, competing in <strong>NLC</strong> (Northern League of Legends Championship). <strong className="darkside">Darkside</strong> is
+              our development team competing in <strong>Rivals Division 1</strong> - a proving ground where raw talent is shaped into competitive
               players ready to step up.
             </p>
             <p className={styles['story__body']}>

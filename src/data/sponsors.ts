@@ -6,8 +6,7 @@ export const sponsors: Sponsor[] = [
     name: 'Lundqvist Trävaru',
     tier: 'main',
     websiteUrl: 'https://www.lundqvisttravaru.se/',
-    description:
-      'Lundqvist has been the cornerstone of Lightside since the very beginning. Their belief in the vision of a competitive Swedish esports organization made everything possible. We are proud to carry their name and represent their values on every stage we compete on.',
+    description: '',
   },
   {
     id: 'manategg',

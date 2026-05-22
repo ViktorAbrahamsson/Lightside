@@ -67,7 +67,7 @@ export function Home() {
           <h1 className={styles['hero__title']}>
             <span className={styles['hero__title-light']}>LIGHT</span>SIDE
           </h1>
-          <p className={styles['hero__sub']}>Competing from the shadows.</p>
+          <p className={styles['hero__sub']}>Northern Sweden's competitive esports organization.</p>
           <div className={styles['hero__cta-group']}>
             <Button as="a" href="/contact" variant="primary" size="lg">
               Contact

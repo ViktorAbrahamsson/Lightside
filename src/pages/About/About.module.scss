@@ -80,6 +80,16 @@
       color: v.$color-text;
       font-weight: v.$font-weight-bold;
     }
+
+    strong.lightside {
+      color: v.$color-primary;
+      font-weight: v.$font-weight-bold;
+    }
+
+    strong.darkside {
+      color: v.$color-darkside;
+      font-weight: v.$font-weight-bold;
+    }
   }
 }
 

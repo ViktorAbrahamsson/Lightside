@@ -31,7 +31,8 @@ export function Footer() {
             <img src="/lightside-logo--blue-gradient.png" alt="Lightside" height={32} />
           </Link>
           <p className={styles['footer__tagline']}>
-            Lundqvist Lightside - Competing from the shadows.
+            Northern Sweden's competitive esports organization.<br />
+            Founded 2014 #JoinTheLightside
           </p>
           <SocialIcons links={contactInfo.socials} size="sm" />
         </div>
