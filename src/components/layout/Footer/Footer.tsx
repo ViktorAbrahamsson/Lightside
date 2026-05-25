@@ -28,7 +28,7 @@ export function Footer() {
       <div className={styles['footer__inner']}>
         <div className={styles['footer__brand']}>
           <Link to="/" aria-label="Lightside - Home">
-            <img src="/lightside-logo--blue-gradient.png" alt="Lightside" height={32} />
+            <img src="/logo-white.png" alt="Lightside" height={32} />
           </Link>
           <p className={styles['footer__tagline']}>
             Northern Sweden's competitive esports organization.<br />

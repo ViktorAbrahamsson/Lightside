@@ -182,12 +182,12 @@
     text-transform: uppercase;
     letter-spacing: -0.01em;
     line-height: 1;
-    color: rgba(255, 255, 255, 0.3);
+    color: v.$color-text;
     transition: color v.$transition-fast;
     text-decoration: none;
 
     &:hover {
-      color: v.$color-text;
+      color: v.$color-primary;
     }
 
     &--active {

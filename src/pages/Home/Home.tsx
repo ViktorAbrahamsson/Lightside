@@ -179,7 +179,9 @@ export function Home() {
                 {sponsors.filter(s => s.tier === 'partner' || s.tier === 'sponsor').map((sponsor) => {
                   const hasUrl = Boolean(sponsor.websiteUrl && sponsor.websiteUrl !== '#');
                   const inner = sponsor.logoUrl ? (
-                    <img className={styles['sponsors__logo']} src={sponsor.logoUrl} alt={sponsor.name} />
+                    <div className={`${styles['sponsors__logo-placeholder']} ${styles['sponsors__logo-placeholder--white']}`}>
+                      <img className={styles['sponsors__logo']} src={sponsor.logoUrl} alt={sponsor.name} />
+                    </div>
                   ) : (
                     <div className={styles['sponsors__logo-placeholder']}>
                       <span className={styles['sponsors__name']}>{sponsor.name}</span>
@@ -212,7 +214,9 @@ export function Home() {
                     <>
                       <span className={styles['sponsors__member-tag']}>Member of</span>
                       {sponsor.logoUrl ? (
-                        <img className={styles['sponsors__logo']} src={sponsor.logoUrl} alt={sponsor.name} />
+                        <div className={`${styles['sponsors__logo-placeholder']} ${styles['sponsors__logo-placeholder--white']}`}>
+                          <img className={styles['sponsors__logo']} src={sponsor.logoUrl} alt={sponsor.name} />
+                        </div>
                       ) : (
                         <p className={styles['sponsors__member-name']}>{sponsor.name}</p>
                       )}

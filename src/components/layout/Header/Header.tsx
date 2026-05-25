@@ -40,7 +40,7 @@ export function Header() {
     >
       <div className={styles['header__inner']}>
         <Link to="/" className={styles['header__logo']} aria-label="Lightside - Home" onClick={closeMenu}>
-          <img src="/lightside-logo--blue-gradient.png" alt="Lightside" height={36} />
+          <img src="/logo-white.png" alt="Lightside" height={36} />
         </Link>
 
         <nav className={styles['header__nav']} aria-label="Main navigation">

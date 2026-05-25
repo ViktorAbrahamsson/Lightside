@@ -96,7 +96,7 @@
 // Mission
 .mission {
   @include m.section-padding;
-  background: v.$color-surface;
+  background: v.$color-background;
 
   &__inner {
     @include m.container;
@@ -154,6 +154,155 @@
   }
 }
 
+// Track Record
+.track-record {
+  @include m.section-padding;
+  background: v.$color-surface;
+
+  &__inner {
+    @include m.container;
+  }
+
+  &__label {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-primary;
+    margin-bottom: v.$space-3;
+  }
+
+  &__heading {
+    font-size: clamp(v.$font-size-2xl, 4vw, v.$font-size-3xl);
+    margin-bottom: v.$space-10;
+  }
+
+  &__grid {
+    display: grid;
+    gap: v.$space-6;
+
+    @include m.respond-to(lg) {
+      grid-template-columns: 1fr 1.4fr;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-4;
+  }
+
+  &__stat-card {
+    display: flex;
+    align-items: center;
+    gap: v.$space-6;
+    background: v.$color-background;
+    border: 1px solid v.$color-border;
+    border-left: 3px solid v.$color-primary;
+    border-radius: v.$border-radius-md;
+    padding: v.$space-4 v.$space-6;
+  }
+
+  &__stat-value {
+    font-size: clamp(v.$font-size-2xl, 4vw, v.$font-size-3xl);
+    font-weight: v.$font-weight-bold;
+    color: v.$color-primary;
+    white-space: nowrap;
+    min-width: 3.5ch;
+  }
+
+  &__stat-label {
+    font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-text;
+    margin-bottom: v.$space-1;
+  }
+
+  &__stat-sub {
+    font-size: v.$font-size-xs;
+    color: v.$color-text-muted;
+  }
+
+  &__milestones {
+    background: v.$color-background;
+    border: 1px solid v.$color-border;
+    border-radius: v.$border-radius-md;
+    padding: v.$space-6 v.$space-8;
+  }
+
+  &__milestones-heading {
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-text-muted;
+    margin-bottom: v.$space-6;
+  }
+
+  &__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-4;
+    list-style: none;
+  }
+
+  &__timeline-row {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: v.$space-6;
+    align-items: baseline;
+    padding-bottom: v.$space-4;
+    border-bottom: 1px solid v.$color-border;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__timeline-year {
+    font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-semibold;
+    color: v.$color-text-muted;
+  }
+
+  &__timeline-text {
+    font-size: v.$font-size-sm;
+    color: v.$color-text-muted;
+    line-height: 1.6;
+
+    strong {
+      color: v.$color-text;
+      font-weight: v.$font-weight-bold;
+    }
+  }
+
+  &__badge-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: v.$space-1;
+    background: rgba(212, 175, 55, 0.15);
+    color: #d4af37;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: v.$border-radius-sm;
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    padding: 1px v.$space-2;
+  }
+
+  &__badge-blue {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(v.$color-primary, 0.15);
+    color: v.$color-primary;
+    border: 1px solid rgba(v.$color-primary, 0.3);
+    border-radius: v.$border-radius-sm;
+    font-size: v.$font-size-xs;
+    font-weight: v.$font-weight-semibold;
+    padding: 1px v.$space-2;
+  }
+}
+
 // Sponsor Spotlight
 .sponsor-spotlight {
   @include m.section-padding;
@@ -182,11 +331,19 @@
     border-top: 3px solid v.$color-primary;
     border-radius: v.$border-radius-md;
     padding: v.$space-8;
-    max-width: 640px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   &__logo {
     margin-bottom: v.$space-6;
+
+    img {
+      max-height: 80px;
+      width: auto;
+      object-fit: contain;
+    }
   }
 
   &__logo-text {

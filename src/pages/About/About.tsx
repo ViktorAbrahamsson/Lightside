@@ -80,6 +80,52 @@ export function About() {
         </div>
       </section>
 
+      <section className={styles['track-record']} aria-labelledby="track-record-heading">
+        <Reveal><div className={styles['track-record__inner']}>
+          <p className={styles['track-record__label']} aria-hidden="true">Track Record</p>
+          <h2 id="track-record-heading" className={styles['track-record__heading']}>Organization History</h2>
+          <div className={styles['track-record__grid']}>
+            <div className={styles['track-record__stats']}>
+              {[
+                { stat: '2014', label: 'Year Founded', sub: 'As Lightside Gaming · Rebranded 2019' },
+                { stat: '10+', label: 'Years in competitive esports', sub: "One of Sweden's longest-running orgs" },
+                { stat: '9W', label: 'Longest win streak (LoL)', sub: 'Feb 19 - Mar 23, 2023' },
+                { stat: '158K', label: 'Peak viewers', sub: 'NLC Winter 2025 - all-time org record' },
+              ].map(({ stat, label, sub }) => (
+                <div key={stat} className={styles['track-record__stat-card']}>
+                  <span className={styles['track-record__stat-value']}>{stat}</span>
+                  <div>
+                    <p className={styles['track-record__stat-label']}>{label}</p>
+                    <p className={styles['track-record__stat-sub']}>{sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className={styles['track-record__milestones']}>
+              <p className={styles['track-record__milestones-heading']} aria-hidden="true">Key Milestones</p>
+              <ol className={styles['track-record__timeline']}>
+                {[
+                  { year: '2014', content: <>Founded as <strong>Lightside Gaming</strong> in Northern Sweden</> },
+                  { year: '2019', content: <>Rebrands to <strong>Lundqvist Lightside</strong> under Esports Director Jakke13</> },
+                  { year: '2020', content: <>Enters the <strong>NLC</strong> (Northern League of Legends Championship)</> },
+                  { year: '2021', content: <><strong>1st place</strong> - Leagues.gg Winter Showdown Sweden <span className={styles['track-record__badge-gold']}>🥇 1st</span></> },
+                  { year: '2023', content: <>9-game win streak. Promoted to <strong>NLC</strong> <span className={styles['track-record__badge-blue']}>NLC</span></> },
+                  { year: '2024', content: <><strong>5th/8</strong> in NLC</> },
+                  { year: '2025', content: <>158K peak viewers NLC Winter - all-time org viewership record</> },
+                  { year: '2026', content: <>New rosters across all teams. <strong>All three Rivals League squads</strong> (LoL, Valorant, CS2) reach playoffs. NLC Spring Split with Mansterninja, Spiderlair, Unicow, Bjoernen &amp; Lyrokun</> },
+                ].map(({ year, content }) => (
+                  <li key={year} className={styles['track-record__timeline-row']}>
+                    <span className={styles['track-record__timeline-year']}>{year}</span>
+                    <span className={styles['track-record__timeline-text']}>{content}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </div></Reveal>
+      </section>
+
       <section className={styles['sponsor-spotlight']} aria-labelledby="sponsor-heading">
         <Reveal><div className={styles['sponsor-spotlight__inner']}>
           <p className={styles['sponsor-spotlight__label']} aria-hidden="true">Main Sponsor</p>

@@ -41,8 +41,7 @@
   }
 
   &__heading {
-    font-size: clamp(v.$font-size-2xl, 5vw, v.$font-size-3xl);
-    font-weight: v.$font-weight-bold;
+    font-size: clamp(v.$font-size-2xl, 4vw, v.$font-size-3xl);
     text-transform: uppercase;
     margin-bottom: v.$space-4;
   }

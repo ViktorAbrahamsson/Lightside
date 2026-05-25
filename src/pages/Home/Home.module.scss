@@ -359,6 +359,10 @@
 
   &__item--linked:hover &__logo-placeholder {
     border-color: rgba(255, 255, 255, 0.25);
+
+    &--white {
+      border-color: v.$color-primary;
+    }
   }
 
   &__logo {
@@ -375,6 +379,11 @@
     border: 1px solid v.$color-border;
     border-radius: v.$border-radius-md;
     transition: border-color v.$transition-fast;
+
+    &--white {
+      background: #ffffff;
+      border-color: transparent;
+    }
   }
 
   &__name {
@@ -403,7 +412,7 @@
     min-width: 240px;
 
     &--linked:hover {
-      border-color: rgba(255, 255, 255, 0.25);
+      border-color: v.$color-primary;
     }
   }
 

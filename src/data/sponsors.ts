@@ -4,6 +4,7 @@ export const sponsors: Sponsor[] = [
   {
     id: 'lundqvist',
     name: 'Lundqvist Trävaru',
+    logoUrl: '/sponsors/lundqvist-travaru.png',
     tier: 'main',
     websiteUrl: 'https://www.lundqvisttravaru.se/',
     description: '',
@@ -11,6 +12,7 @@ export const sponsors: Sponsor[] = [
   {
     id: 'manategg',
     name: 'Manatee.GG',
+    logoUrl: '/manatee.png',
     tier: 'partner',
     websiteUrl: 'https://www.manatee.gg/collections/lundqvist-lightside',
   },
