@@ -15,7 +15,7 @@ export const teams: Team[] = [
         ign: 'Mansterninja',
         role: 'top',
         isStaff: false,
-        imageUrl: undefined,
+        imageUrl: '/players/Mans jersey.png',
         socials: [],
       },
       {
@@ -24,7 +24,7 @@ export const teams: Team[] = [
         ign: 'Spiderlair',
         role: 'jungle',
         isStaff: false,
-        imageUrl: undefined,
+        imageUrl: '/players/Spiderlair Jersey.png',
         socials: [],
       },
       {
@@ -33,7 +33,7 @@ export const teams: Team[] = [
         ign: 'Unicow',
         role: 'mid',
         isStaff: false,
-        imageUrl: undefined,
+        imageUrl: '/players/Unicow jersey.png',
         socials: [],
       },
       {
@@ -42,7 +42,7 @@ export const teams: Team[] = [
         ign: 'Bjoernen',
         role: 'bot',
         isStaff: false,
-        imageUrl: undefined,
+        imageUrl: '/players/Bjoernen jersey.png',
         socials: [],
       },
       {
@@ -51,7 +51,7 @@ export const teams: Team[] = [
         ign: 'Lyrokun',
         role: 'support',
         isStaff: false,
-        imageUrl: undefined,
+        imageUrl: '/players/Lyrokun jersey.png',
         socials: [],
       },
       {
