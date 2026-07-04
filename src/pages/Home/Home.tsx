@@ -92,8 +92,9 @@ export function Home() {
               banner - with the shared goal of reaching the top of Swedish and Nordic competition.
             </p>
             <p className={styles['about-preview__body']}>
-              We believe in developing talent, building community, and representing our sponsors
-              with pride on every stage we compete on.
+              Lightside shall be a leader for youth esports in northern Sweden, by being a
+              community for all and free of discrimination. Together, we pave the way towards
+              the very top of Nordic esports.
             </p>
             <Link
               to="/about"

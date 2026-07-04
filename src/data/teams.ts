@@ -7,7 +7,7 @@ export const teams: Team[] = [
     game: 'League of Legends',
     accentColor: '#00beff',
     description:
-      'Our flagship team competing in Swedish and Nordic circuits. Lightside represents the organization at the highest level, built on discipline, teamwork, and a relentless drive to win.',
+      'Our flagship team competing in the Nordic circuits. Lightside represents the organization at the highest level, built on discipline, teamwork, and a relentless drive to win.',
     members: [
       {
         id: 'ls-top',

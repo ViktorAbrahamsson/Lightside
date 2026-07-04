@@ -58,8 +58,9 @@ export function About() {
           <Reveal><div className={styles['mission__callout']}>
             <p className={styles['mission__label']} aria-hidden="true">Our mission</p>
             <blockquote className={styles['mission__quote']}>
-              To develop competitive talent, foster community, and represent our partners with
-              pride on every stage we compete on.
+              Lightside shall be a leader for youth esports in northern Sweden, by being a
+              community for all and free of discrimination. Together, we pave the way towards
+              the very top of Nordic esports.
             </blockquote>
           </div></Reveal>
           <div className={styles['mission__values']} role="list">
@@ -107,8 +108,9 @@ export function About() {
               <ol className={styles['track-record__timeline']}>
                 {[
                   { year: '2014', content: <>Founded as <strong>Lightside Gaming</strong> in Northern Sweden</> },
+                  { year: '2018', content: <>Joins the newly founded <strong>Swedish League</strong></> },
                   { year: '2019', content: <>Rebrands to <strong>Lundqvist Lightside</strong> under Esports Director Jakke13</> },
-                  { year: '2020', content: <>Enters the <strong>NLC</strong> (Northern League of Legends Championship)</> },
+                  { year: '2020', content: <>Reaches playoffs for the first time in the <strong>Swedish League</strong></> },
                   { year: '2021', content: <><strong>1st place</strong> - Leagues.gg Winter Showdown Sweden <span className={styles['track-record__badge-gold']}>🥇 1st</span></> },
                   { year: '2023', content: <>9-game win streak. Promoted to <strong>NLC</strong> <span className={styles['track-record__badge-blue']}>NLC</span></> },
                   { year: '2024', content: <><strong>5th/8</strong> in NLC</> },
